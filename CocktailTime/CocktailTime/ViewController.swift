@@ -21,11 +21,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchCoursesJson { (result) in
+        fetchDrinksJson { (result) in
             switch result {
-            case .success(let courses):
-                courses.forEach { (course) in
-                    print(course.name)
+            case .success(let drinks):
+                drinks.forEach { (drink) in
+                    print(drink)
                 }
             case .failure(let error):
                 print("Failed to fetch JSON", error)
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         }
     }
     
-    fileprivate func fetchCoursesJson (completion: @escaping (Result<[Course], Error>) -> ()) {
+    fileprivate func fetchDrinksJson (completion: @escaping (Result<[Cocktail], Error>) -> ()) {
 
         // URLString = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
         
@@ -73,8 +73,10 @@ class ViewController: UIViewController {
             
             // If successful
             do {
-                let courses = try JSONDecoder().decode([Course].self, from: data)
-                completion(.success(courses))
+                let cocktailService = try JSONDecoder().decode(CocktailService.self, from: data)
+                let drinks = cocktailService.cocktailResults
+                print("Drink: \(drinks[0])")
+                completion(.success(drinks))
             } catch let jsonError {
                 completion(.failure(jsonError))
             }

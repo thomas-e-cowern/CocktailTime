@@ -16,6 +16,7 @@
 		41361EE323F9ADAA0036D7E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41361EE123F9ADAA0036D7E3 /* LaunchScreen.storyboard */; };
 		41361EEE23F9ADAA0036D7E3 /* CocktailTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41361EED23F9ADAA0036D7E3 /* CocktailTimeTests.swift */; };
 		41361EF923F9ADAA0036D7E3 /* CocktailTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41361EF823F9ADAA0036D7E3 /* CocktailTimeUITests.swift */; };
+		41E7F25323F9D2E900CF0511 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7F25223F9D2E900CF0511 /* Cocktail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		41361EF423F9ADAA0036D7E3 /* CocktailTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocktailTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41361EF823F9ADAA0036D7E3 /* CocktailTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailTimeUITests.swift; sourceTree = "<group>"; };
 		41361EFA23F9ADAA0036D7E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41E7F25223F9D2E900CF0511 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				41361ED323F9AD9D0036D7E3 /* AppDelegate.swift */,
 				41361ED523F9AD9D0036D7E3 /* SceneDelegate.swift */,
 				41361ED723F9AD9D0036D7E3 /* ViewController.swift */,
+				41E7F25223F9D2E900CF0511 /* Cocktail.swift */,
 				41361ED923F9AD9D0036D7E3 /* Main.storyboard */,
 				41361EDF23F9ADAA0036D7E3 /* Assets.xcassets */,
 				41361EE123F9ADAA0036D7E3 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 				41361ED823F9AD9D0036D7E3 /* ViewController.swift in Sources */,
 				41361ED423F9AD9D0036D7E3 /* AppDelegate.swift in Sources */,
 				41361EDE23F9AD9D0036D7E3 /* CocktailTime.xcdatamodeld in Sources */,
+				41E7F25323F9D2E900CF0511 /* Cocktail.swift in Sources */,
 				41361ED623F9AD9D0036D7E3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
