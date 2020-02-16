@@ -8,15 +8,19 @@
 
 import UIKit
 
-struct Course: Decodable {
-    let id: Int
-    let name: String
-    let link: String
-    let imageUrl: String
-    let number_of_lessons: Int
-}
+//struct Course: Decodable {
+//    let id: Int
+//    let name: String
+//    let link: String
+//    let imageUrl: String
+//    let number_of_lessons: Int
+//}
+
+
 
 class ViewController: UIViewController {
+    
+    var drinks = [Cocktail]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +29,15 @@ class ViewController: UIViewController {
             switch result {
             case .success(let drinks):
                 drinks.forEach { (drink) in
-                    print(drink)
+                    self.drinks.append(drink)
                 }
             case .failure(let error):
                 print("Failed to fetch JSON", error)
             }
+//            print("Drink 1: \(self.drinks[1])")
+            self.cleanUpDrinkRecipe(drinks: self.drinks)
         }
+        
     }
     
     fileprivate func fetchDrinksJson (completion: @escaping (Result<[Cocktail], Error>) -> ()) {
@@ -48,10 +55,6 @@ class ViewController: UIViewController {
             URLQueryItem(name: "s", value: drink)
         ]
 
-        
-        print("URL: \(urlComponents.url)")
-       
-        
         guard let url = urlComponents.url else {
             print("Error in the url guard let")
             return
@@ -75,7 +78,7 @@ class ViewController: UIViewController {
             do {
                 let cocktailService = try JSONDecoder().decode(CocktailService.self, from: data)
                 let drinks = cocktailService.cocktailResults
-                print("Drink: \(drinks[0])")
+//                print("Drink: \(drinks[0])")
                 completion(.success(drinks))
             } catch let jsonError {
                 completion(.failure(jsonError))
@@ -84,6 +87,25 @@ class ViewController: UIViewController {
         }.resume()
     }
 
+    func cleanUpDrinkRecipe (drinks: [Cocktail]) {
+        
+        var ingredients = [String]()
+        
+        for drink in drinks {
+            let name = drink.name
+            let glass = drink.glass
+            
+            for i in 1...15 {
+                let ingredient = "drink.ingredient\(i)"
+                print(ingredient)
+//                if ingredient != nil {
+//                    ingredients.append(drink)
+//                }
+            }
+//            print("Name: \(name), Glass: \(glass)")
+        }
+    }
 
+    
 }
 
