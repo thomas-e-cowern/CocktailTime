@@ -21,19 +21,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchCoursesJson { (courses, error) in
-            if let error = error {
-                print("Failed to fetch courses", error)
-                return
+        fetchCoursesJson { (result) in
+            switch result {
+            case .success(let courses):
+                courses.forEach { (course) in
+                    print(course.name)
+                }
+            case .failure(let error):
+                print("Failed to fetch JSON", error)
             }
-            
-            courses?.forEach({ (course) in
-                print(course.name)
-            })
         }
     }
     
-    fileprivate func fetchCoursesJson (completion: @escaping ([Course]?, Error?) -> ()) {
+    fileprivate func fetchCoursesJson (completion: @escaping (Result<[Course], Error>) -> ()) {
 
         let URLString = "https://api.letsbuildthatapp.com/jsondecodable/courses"
         
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
             
             // Check for errors
             if let error = error {
-                completion(nil, error)
+                completion(.failure(error))
                 return
             }
             
@@ -59,12 +59,10 @@ class ViewController: UIViewController {
             // If successful
             do {
                 let courses = try JSONDecoder().decode([Course].self, from: data)
-                completion(courses, nil)
+                completion(.success(courses))
             } catch let jsonError {
-                completion(nil, jsonError)
+                completion(.failure(jsonError))
             }
-            
-            
             
         }.resume()
     }
