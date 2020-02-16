@@ -35,9 +35,24 @@ class ViewController: UIViewController {
     
     fileprivate func fetchCoursesJson (completion: @escaping (Result<[Course], Error>) -> ()) {
 
-        let URLString = "https://api.letsbuildthatapp.com/jsondecodable/courses"
+        // URLString = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
         
-        guard let url = URL(string: URLString) else {
+        let drink = "margarita"
+        
+        var urlComponents = URLComponents()
+        
+        urlComponents.scheme = "https"
+        urlComponents.host = "www.thecocktaildb.com"
+        urlComponents.path = "/api/json/v1/1/search.php"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "s", value: drink)
+        ]
+
+        
+        print("URL: \(urlComponents.url)")
+       
+        
+        guard let url = urlComponents.url else {
             print("Error in the url guard let")
             return
         }
