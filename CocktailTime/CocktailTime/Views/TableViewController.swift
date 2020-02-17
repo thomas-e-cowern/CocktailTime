@@ -10,12 +10,20 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let test = ["Test 1", "Test 2", "Test 3", "Test 4"]
+    var cocktailList = [Cocktail]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        CocktailController.fetchCocktsilResults(with: "margarita") { (cocktails) in
+            guard let fetchedCocktails = cocktails else { return }
+//            print(fetchedCocktails)
+            self.cocktailList = fetchedCocktails
+//            print("cocktail list: \(self.cocktailList)")
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,15 +41,17 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return test.count
+        return cocktailList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
-
-        cell.textLabel?.text = test[indexPath.row]
-        print(test[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath) as!
+            CocktailTableViewCell
+        print(cocktailList)
+        let cocktail = cocktailList[indexPath.row]
+        print(cocktail)
+        cell.cocktail = cocktail
         return cell
     }
     

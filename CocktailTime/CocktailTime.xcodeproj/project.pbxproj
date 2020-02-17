@@ -18,6 +18,7 @@
 		41361EF923F9ADAA0036D7E3 /* CocktailTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41361EF823F9ADAA0036D7E3 /* CocktailTimeUITests.swift */; };
 		414FEE3C23FACB7A001305FA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414FEE3B23FACB7A001305FA /* TableViewController.swift */; };
 		414FEE3E23FAD0AB001305FA /* CocktailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414FEE3D23FAD0AA001305FA /* CocktailController.swift */; };
+		41A7D53823FAE3FE006EF4A7 /* CocktailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7D53723FAE3FE006EF4A7 /* CocktailTableViewCell.swift */; };
 		41E7F25323F9D2E900CF0511 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7F25223F9D2E900CF0511 /* Cocktail.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		41361EFA23F9ADAA0036D7E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		414FEE3B23FACB7A001305FA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		414FEE3D23FAD0AA001305FA /* CocktailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailController.swift; sourceTree = "<group>"; };
+		41A7D53723FAE3FE006EF4A7 /* CocktailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CocktailTableViewCell.swift; path = CocktailTime/Views/CocktailTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		41E7F25223F9D2E900CF0511 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 		414FEE4023FAD4C8001305FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				41A7D53723FAE3FE006EF4A7 /* CocktailTableViewCell.swift */,
 				41361ED723F9AD9D0036D7E3 /* ViewController.swift */,
 				414FEE3B23FACB7A001305FA /* TableViewController.swift */,
 			);
@@ -306,6 +309,7 @@
 				41361ED823F9AD9D0036D7E3 /* ViewController.swift in Sources */,
 				414FEE3E23FAD0AB001305FA /* CocktailController.swift in Sources */,
 				414FEE3C23FACB7A001305FA /* TableViewController.swift in Sources */,
+				41A7D53823FAE3FE006EF4A7 /* CocktailTableViewCell.swift in Sources */,
 				41361ED423F9AD9D0036D7E3 /* AppDelegate.swift in Sources */,
 				41361EDE23F9AD9D0036D7E3 /* CocktailTime.xcdatamodeld in Sources */,
 				41E7F25323F9D2E900CF0511 /* Cocktail.swift in Sources */,
