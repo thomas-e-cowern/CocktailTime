@@ -34,10 +34,7 @@ class ViewController: UIViewController {
             case .failure(let error):
                 print("Failed to fetch JSON", error)
             }
-//            print("Drink 1: \(self.drinks[1])")
-            self.cleanUpDrinkRecipe(drinks: self.drinks)
         }
-        
     }
     
     fileprivate func fetchDrinksJson (completion: @escaping (Result<[Cocktail], Error>) -> ()) {
@@ -78,7 +75,7 @@ class ViewController: UIViewController {
             do {
                 let cocktailService = try JSONDecoder().decode(CocktailService.self, from: data)
                 let drinks = cocktailService.cocktailResults
-//                print("Drink: \(drinks[0])")
+                print("Drink: \(drinks)")
                 completion(.success(drinks))
             } catch let jsonError {
                 completion(.failure(jsonError))
@@ -86,26 +83,4 @@ class ViewController: UIViewController {
             
         }.resume()
     }
-
-    func cleanUpDrinkRecipe (drinks: [Cocktail]) {
-        
-        var ingredients = [String]()
-        
-        for drink in drinks {
-            let name = drink.name
-            let glass = drink.glass
-            
-            for i in 1...15 {
-                let ingredient = "drink.ingredient\(i)"
-                print(ingredient)
-//                if ingredient != nil {
-//                    ingredients.append(drink)
-//                }
-            }
-//            print("Name: \(name), Glass: \(glass)")
-        }
-    }
-
-    
 }
-
