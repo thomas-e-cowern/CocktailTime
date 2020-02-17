@@ -1,47 +1,40 @@
 //
-//  ViewController.swift
+//  CocktailController.swift
 //  CocktailTime
 //
-//  Created by Thomas Cowern New on 2/16/20.
+//  Created by Thomas Cowern New on 2/17/20.
 //  Copyright © 2020 Thomas Cowern New. All rights reserved.
 //
 
 import UIKit
 
-//struct Course: Decodable {
-//    let id: Int
-//    let name: String
-//    let link: String
-//    let imageUrl: String
-//    let number_of_lessons: Int
-//}
+class CocktailTime: UIViewController {
 
-
-
-class ViewController: UIViewController {
-    
-    var drinks = [Cocktail]()
+   var drinkList = [Cocktail]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchDrinksJson { (result) in
+        CocktailTime.fetchDrinksJson { (result) in
             switch result {
             case .success(let drinks):
-                drinks.forEach { (drink) in
-                    self.drinks.append(drink)
-                }
+
+                self.drinkList = drinks
+                
+                print("drinkList: \(self.drinkList)")
+                
             case .failure(let error):
                 print("Failed to fetch JSON", error)
             }
         }
     }
     
-    fileprivate func fetchDrinksJson (completion: @escaping (Result<[Cocktail], Error>) -> ()) {
+    static func fetchDrinksJson (completion: @escaping (Result<[Cocktail], Error>) -> ()) {
 
         // URLString = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
         
         let drink = "margarita"
+        var ingredients = [String]()
         
         var urlComponents = URLComponents()
         
@@ -75,7 +68,7 @@ class ViewController: UIViewController {
             do {
                 let cocktailService = try JSONDecoder().decode(CocktailService.self, from: data)
                 let drinks = cocktailService.cocktailResults
-                print("Drink: \(drinks)")
+//                print("Drink: \(drinks)")
                 completion(.success(drinks))
             } catch let jsonError {
                 completion(.failure(jsonError))
