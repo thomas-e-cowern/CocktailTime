@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +26,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bd4-Dd-TBY">
                                             <rect key="frame" x="20" y="11" width="374" height="150.5"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="martini" translatesAutoresizingMaskIntoConstraints="NO" id="Syc-oQ-vjN">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Syc-oQ-vjN">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="Igx-Ve-4ko"/>
@@ -51,7 +52,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="cocktailImage" destination="Syc-oQ-vjN" id="UdO-qS-UyA"/>
                                     <outlet property="cocktailLabel" destination="OgJ-LN-TZL" id="0Il-6r-XUQ"/>
+                                    <segue destination="6Fh-ae-F6A" kind="show" identifier="toCocktailDetail" id="Y5T-9c-fta"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -65,6 +68,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsM-cR-dBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1813.0434782608697" y="55.580357142857139"/>
+        </scene>
+        <!--Cocktail Detail View Controller-->
+        <scene sceneID="DOB-lV-94h">
+            <objects>
+                <viewController id="6Fh-ae-F6A" customClass="CocktailDetailViewController" customModule="CocktailTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WYx-ul-yQW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Drink Name)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FsB-af-nPF">
+                                <rect key="frame" x="100" y="112" width="214" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFJ-Lq-hyf">
+                                <rect key="frame" x="24" y="461.5" width="366" height="130"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="2Oz-92-pYm"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vA8-GB-9Hm">
+                                <rect key="frame" x="87" y="189.5" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vA8-GB-9Hm" secondAttribute="height" multiplier="1:1" id="JQs-uF-u00"/>
+                                    <constraint firstAttribute="width" constant="240" id="etL-Ra-Vqn"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FsB-af-nPF" firstAttribute="leading" secondItem="jjx-Ff-qHP" secondAttribute="leading" constant="100" id="5QW-8R-YXr"/>
+                            <constraint firstItem="FsB-af-nPF" firstAttribute="top" secondItem="jjx-Ff-qHP" secondAttribute="top" constant="24" id="FrQ-So-iZO"/>
+                            <constraint firstItem="vA8-GB-9Hm" firstAttribute="centerX" secondItem="WYx-ul-yQW" secondAttribute="centerX" id="K2D-SK-jfb"/>
+                            <constraint firstItem="TFJ-Lq-hyf" firstAttribute="top" secondItem="vA8-GB-9Hm" secondAttribute="bottom" constant="32" id="LT6-ta-21M"/>
+                            <constraint firstItem="vA8-GB-9Hm" firstAttribute="top" secondItem="FsB-af-nPF" secondAttribute="bottom" constant="39" id="Wqf-pn-D14"/>
+                            <constraint firstItem="jjx-Ff-qHP" firstAttribute="trailing" secondItem="TFJ-Lq-hyf" secondAttribute="trailing" constant="24" id="e3f-cs-THh"/>
+                            <constraint firstItem="jjx-Ff-qHP" firstAttribute="trailing" secondItem="FsB-af-nPF" secondAttribute="trailing" constant="100" id="fM9-dH-WQt"/>
+                            <constraint firstItem="TFJ-Lq-hyf" firstAttribute="centerX" secondItem="WYx-ul-yQW" secondAttribute="centerX" id="hZM-y5-79t"/>
+                            <constraint firstItem="TFJ-Lq-hyf" firstAttribute="leading" secondItem="jjx-Ff-qHP" secondAttribute="leading" constant="24" id="oMQ-n4-ur4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jjx-Ff-qHP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HeU-cJ-Kr2"/>
+                    <connections>
+                        <outlet property="ciocktailNameLabel" destination="FsB-af-nPF" id="IFx-ru-TMt"/>
+                        <outlet property="cocktailImage" destination="vA8-GB-9Hm" id="zuX-Av-5IX"/>
+                        <outlet property="cocktailInstructionsText" destination="TFJ-Lq-hyf" id="whK-hk-n0l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Srs-Rx-8jR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2760.8695652173915" y="55.580357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dle-J7-nBl">
@@ -85,7 +146,4 @@
             <point key="canvasLocation" x="902.89855072463774" y="55.580357142857139"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="martini" width="77" height="128"/>
-    </resources>
 </document>

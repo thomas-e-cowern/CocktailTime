@@ -47,7 +47,7 @@ class CocktailController: UIViewController {
             return
         }
         
-        print(finalUrl)
+//        print(finalUrl)
         
         // Building the request
         var request = URLRequest(url: finalUrl)
@@ -86,7 +86,47 @@ class CocktailController: UIViewController {
         }.resume()
     }
 
-   var drinkList = [Cocktail]()
+   // MARK: - Fetching image from the web
+      static func getCocktailThumbnail(_ cocktail: Cocktail, completion: @escaping ((UIImage?)) -> Void) {
+          //Setting up the url to get the poster
+//        print(cocktail.thumbnail)
+//          var thumbnailBaseUrl = URL(string: "")
+        guard let thumbnailUrl = URL(string: cocktail.thumbnail) else {
+            
+            print("error in thumbnailUrl")
+            return
+            
+        }
+        
+        
+//        print(thumbnailUrl)
+//            let urlForThumbnailImage = cocktail.thumbnail
+//
+//          thumbnailBaseUrl?.appendPathComponent(urlForThumbnailImage)
+//
+//        guard let finalThumbnailUrl = thumbnailBaseUrl else { return }
+        
+        
+   
+          //Start the data taks to fetch the poster image
+          URLSession.shared.dataTask(with: thumbnailUrl) { (data, response, error) in
+              if let error = error {
+                  print("😡 There was an error in \(#function) ; \(error) ; \(error.localizedDescription)")
+                  completion(nil)
+                  return
+              }
+              // check to see the data is good
+              guard let thumbnailData = data else {
+                print("Data is no good")
+                  completion(nil)
+                  return
+              }
+              
+              // change the data into a UIImage to be displayed
+              let image = UIImage(data: thumbnailData)
+              completion(image)
+          }.resume()
+      }
 
 //    override func viewDidLoad() {
 //        super.viewDidLoad()

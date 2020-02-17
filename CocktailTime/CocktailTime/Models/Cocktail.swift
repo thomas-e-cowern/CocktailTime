@@ -21,7 +21,8 @@ struct CocktailService: Codable {
 struct Cocktail : Codable {
     var name: String
     var glass: String
-//    var instructions: String
+    var thumbnail: String
+    var instructions: String
 //    var ingredient1: String?
 //    var ingredient2: String?
 //    var ingredient3: String?
@@ -41,7 +42,8 @@ struct Cocktail : Codable {
     enum CodingKeys: String, CodingKey {
         case name = "strDrink"
         case glass = "strGlass"
-//        case instructions = "strInstructions"
+        case thumbnail = "strDrinkThumb"
+        case instructions = "strInstructions"
 //        case ingredient1 = "strIngredient1"
 //        case ingredient2 = "strIngredient2"
 //        case ingredient3 = "strIngredient3"

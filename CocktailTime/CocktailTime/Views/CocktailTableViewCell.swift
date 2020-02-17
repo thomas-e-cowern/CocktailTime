@@ -12,26 +12,33 @@ class CocktailTableViewCell: UITableViewCell {
 
     // Outlets
     @IBOutlet weak var cocktailLabel: UILabel!
+    @IBOutlet weak var cocktailImage: UIImageView!
     
     // landing pad for data
     var cocktail: Cocktail? {
         didSet {
-            print("landing pad")
             updateViews()
         }
     }
     
     // keeping view updated
     func updateViews() {
-        // Showing the movie info
-        print("cocktail in CocktailTableViewCell")
         guard let cocktail = cocktail else {
             print("Error in guard let for CocktailTableViewCell")
             return
         }
-        print("Hit update views")
+//        print("Hit update views")
         
-        // Fetching the movie poster
+        // Fetching the cocktail thumbnail
+        CocktailController.getCocktailThumbnail(cocktail) { (image) in
+            guard let image = image else {
+                print("error getting image in cocktailTableViewCell")
+                return
+            }
+            DispatchQueue.main.async {
+                self.cocktailImage.image = image
+            }
+        }
 //        MovieController.getMoviePoster(movie) { (image) in
 //            DispatchQueue.main.async {
 //                self.moviePosterView.image = image
