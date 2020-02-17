@@ -25,6 +25,7 @@ class TableViewController: UITableViewController {
             }
         }
         
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -53,6 +54,10 @@ class TableViewController: UITableViewController {
         print(cocktail)
         cell.cocktail = cocktail
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 166
     }
     
 
