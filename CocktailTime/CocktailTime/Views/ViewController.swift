@@ -8,16 +8,6 @@
 
 import UIKit
 
-//struct Course: Decodable {
-//    let id: Int
-//    let name: String
-//    let link: String
-//    let imageUrl: String
-//    let number_of_lessons: Int
-//}
-
-
-
 class ViewController: UIViewController {
     
     var drinkList = [Cocktail]()
@@ -31,8 +21,6 @@ class ViewController: UIViewController {
 
                 self.drinkList = drinks
                 
-                print("drinkList: \(self.drinkList)")
-                
             case .failure(let error):
                 print("Failed to fetch JSON", error)
             }
@@ -41,11 +29,11 @@ class ViewController: UIViewController {
     
     fileprivate func fetchDrinksJson (completion: @escaping (Result<[Cocktail], Error>) -> ()) {
 
-        // URLString = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
+        // URLString should be "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
         
-        let drink = "margarita"
-        var ingredients = [String]()
+        let drink = "scotch"
         
+        // Put together the url
         var urlComponents = URLComponents()
         
         urlComponents.scheme = "https"
@@ -60,6 +48,9 @@ class ViewController: UIViewController {
             return
         }
         
+        print("URL: \(url)")
+        
+        // Make the call to the API
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             // Check for errors
@@ -74,11 +65,10 @@ class ViewController: UIViewController {
                 return
             }
             
-            // If successful
+            // If successful, return the drinks
             do {
                 let cocktailService = try JSONDecoder().decode(CocktailService.self, from: data)
                 let drinks = cocktailService.cocktailResults
-//                print("Drink: \(drinks)")
                 completion(.success(drinks))
             } catch let jsonError {
                 completion(.failure(jsonError))

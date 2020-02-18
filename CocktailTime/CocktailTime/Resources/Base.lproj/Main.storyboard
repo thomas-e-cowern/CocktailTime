@@ -101,14 +101,35 @@
                                     <constraint firstAttribute="width" constant="240" id="etL-Ra-Vqn"/>
                                 </constraints>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iMW-rQ-c9l">
+                                <rect key="frame" x="88" y="607.5" width="238" height="168"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="168" id="hEj-ko-3oQ"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ingredientCell" id="bLM-ri-rEK">
+                                        <rect key="frame" x="0.0" y="28" width="238" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bLM-ri-rEK" id="Ahd-bf-jNP">
+                                            <rect key="frame" x="0.0" y="0.0" width="238" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="iMW-rQ-c9l" firstAttribute="leading" secondItem="jjx-Ff-qHP" secondAttribute="leading" constant="88" id="07X-mt-5zm"/>
                             <constraint firstItem="FsB-af-nPF" firstAttribute="leading" secondItem="jjx-Ff-qHP" secondAttribute="leading" constant="100" id="5QW-8R-YXr"/>
+                            <constraint firstItem="iMW-rQ-c9l" firstAttribute="top" secondItem="TFJ-Lq-hyf" secondAttribute="bottom" constant="16" id="Ar6-o2-UkI"/>
                             <constraint firstItem="FsB-af-nPF" firstAttribute="top" secondItem="jjx-Ff-qHP" secondAttribute="top" constant="24" id="FrQ-So-iZO"/>
                             <constraint firstItem="vA8-GB-9Hm" firstAttribute="centerX" secondItem="WYx-ul-yQW" secondAttribute="centerX" id="K2D-SK-jfb"/>
                             <constraint firstItem="TFJ-Lq-hyf" firstAttribute="top" secondItem="vA8-GB-9Hm" secondAttribute="bottom" constant="32" id="LT6-ta-21M"/>
+                            <constraint firstItem="iMW-rQ-c9l" firstAttribute="centerX" secondItem="WYx-ul-yQW" secondAttribute="centerX" id="OOJ-Yo-eS6"/>
                             <constraint firstItem="vA8-GB-9Hm" firstAttribute="top" secondItem="FsB-af-nPF" secondAttribute="bottom" constant="39" id="Wqf-pn-D14"/>
+                            <constraint firstItem="jjx-Ff-qHP" firstAttribute="trailing" secondItem="iMW-rQ-c9l" secondAttribute="trailing" constant="88" id="Z0Q-KJ-gLS"/>
                             <constraint firstItem="jjx-Ff-qHP" firstAttribute="trailing" secondItem="TFJ-Lq-hyf" secondAttribute="trailing" constant="24" id="e3f-cs-THh"/>
                             <constraint firstItem="jjx-Ff-qHP" firstAttribute="trailing" secondItem="FsB-af-nPF" secondAttribute="trailing" constant="100" id="fM9-dH-WQt"/>
                             <constraint firstItem="TFJ-Lq-hyf" firstAttribute="centerX" secondItem="WYx-ul-yQW" secondAttribute="centerX" id="hZM-y5-79t"/>
@@ -121,6 +142,7 @@
                         <outlet property="ciocktailNameLabel" destination="FsB-af-nPF" id="IFx-ru-TMt"/>
                         <outlet property="cocktailImage" destination="vA8-GB-9Hm" id="zuX-Av-5IX"/>
                         <outlet property="cocktailInstructionsText" destination="TFJ-Lq-hyf" id="whK-hk-n0l"/>
+                        <outlet property="ingredientsTableView" destination="iMW-rQ-c9l" id="ZMr-Nf-ISU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srs-Rx-8jR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

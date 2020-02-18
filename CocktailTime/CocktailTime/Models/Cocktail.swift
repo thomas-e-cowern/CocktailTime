@@ -39,6 +39,21 @@ struct Cocktail : Codable {
     var ingredient13: String?
     var ingredient14: String?
     var ingredient15: String?
+    var measure1: String?
+    var measure2: String?
+    var measure3: String?
+    var measure4: String?
+    var measure5: String?
+    var measure6: String?
+    var measure7: String?
+    var measure8: String?
+    var measure9: String?
+    var measure10: String?
+    var measure11: String?
+    var measure12: String?
+    var measure13: String?
+    var measure14: String?
+    var measure15: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "idDrink"
@@ -61,33 +76,20 @@ struct Cocktail : Codable {
         case ingredient13 = "strIngredient13"
         case ingredient14 = "strIngredient14"
         case ingredient15 = "strIngredient15"
-    }
-}
-
-struct IngredientService: Codable {
-    
-    let ingredientResults: [Ingredients]
-    
-    enum CodingKeys: String, CodingKey {
-        case ingredientResults = "drinks"
-    }
-    
-}
-
-struct Ingredients : Codable {
-    var id: String
-    var ingredient1: String?
-    var ingredient2: String?
-    var ingredient3: String?
-    var ingredient4: String?
-    var ingredient5: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case id = "idDrink"
-        case ingredient1 = "strIngredient1"
-        case ingredient2 = "strIngredient2"
-        case ingredient3 = "strIngredient3"
-        case ingredient4 = "strIngredient4"
-        case ingredient5 = "strIngredient5"
+        case measure1 = "strMeasure1"
+        case measure2 = "strMeasure2"
+        case measure3 = "strMeasure3"
+        case measure4 = "strMeasure4"
+        case measure5 = "strMeasure5"
+        case measure6 = "strMeasure6"
+        case measure7 = "strMeasure7"
+        case measure8 = "strMeasure8"
+        case measure9 = "strMeasure9"
+        case measure10 = "strMeasure10"
+        case measure11 = "strMeasure11"
+        case measure12 = "strMeasure12"
+        case measure13 = "strMeasure13"
+        case measure14 = "strMeasure14"
+        case measure15 = "strMeasure15"
     }
 }

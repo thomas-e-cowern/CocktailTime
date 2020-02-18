@@ -8,14 +8,16 @@
 
 import UIKit
 
-class CocktailDetailViewController: UIViewController {
+class CocktailDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //Outlets
     @IBOutlet weak var ciocktailNameLabel: UILabel!
     @IBOutlet weak var cocktailImage: UIImageView!
     @IBOutlet weak var cocktailInstructionsText: UITextView!
+    @IBOutlet weak var ingredientsTableView: UITableView!
     
-    var ingredientsArray = [String?]()
-    var finalIngredientArray = [String]()
+    // Properties
+    var ingredientsAndMeasures = [[String]]()
     
     var cocktail: Cocktail? {
         didSet {
@@ -26,17 +28,15 @@ class CocktailDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ingredientsTableView.delegate = self
+        ingredientsTableView.dataSource = self
 
-        ingredientsArray = [cocktail?.ingredient1, cocktail?.ingredient2, cocktail?.ingredient3, cocktail?.ingredient4, cocktail?.ingredient5, cocktail?.ingredient7, cocktail?.ingredient8, cocktail?.ingredient9, cocktail?.ingredient10, cocktail?.ingredient11, cocktail?.ingredient12, cocktail?.ingredient13, cocktail?.ingredient14, cocktail?.ingredient15]
-        print(ingredientsArray)
-        for ingredient in ingredientsArray {
-            if ingredient == nil {
-                // Do nothing
-            } else {
-                finalIngredientArray.append(ingredient ?? "")
-            }
-        }
-        print(finalIngredientArray)
+        guard let cocktail = cocktail else { return }
+        
+        ingredientsAndMeasures = Helper.createIngredientList(cocktail: cocktail)
+        print("IAM: \(ingredientsAndMeasures)")
+        
     }
     
 
@@ -57,16 +57,23 @@ class CocktailDetailViewController: UIViewController {
                 }
             }
             
-            //Getting the ingredients
-//            let id = cocktail.id
-//            let response = IngredientController.getCocktailIngredients(id: id)
-//            print("Response: \(response)")
-            
             cocktailInstructionsText.text = cocktail.instructions
-            print(cocktail)
+//            print(cocktail)
         } else {
             self.title = "Else If"
         }
     }
 
+    // MARK - Table view methods
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ingredientsAndMeasures.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
+        print("IP: \(ingredientsAndMeasures[indexPath.row][0])")
+        let text = "\(ingredientsAndMeasures[indexPath.row][0]) \()"
+        cell.textLabel?.text = text
+        return cell
+    }
 }
