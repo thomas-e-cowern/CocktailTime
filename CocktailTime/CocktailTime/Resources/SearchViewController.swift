@@ -11,8 +11,12 @@ import UIKit
 class SearchViewController: UIViewController {
     
     // Outlets
+    @IBOutlet weak var nameSearchButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var alcoholSearchButton: UIButton!
+    @IBOutlet weak var nameSearchStackview: UIStackView!
+    @IBOutlet weak var alcoholSearchStackview: UIStackView!
     
     var searchText = String()
 
@@ -26,6 +30,14 @@ class SearchViewController: UIViewController {
     // MARK: - Methods
     @IBAction func searchButtonPressed(_ sender: Any) {
         // Starts the whole show....
+    }
+    
+    @IBAction func nameSearchButtonPressed(_ sender: Any) {
+        nameSearchStackview.isHidden = false
+    }
+    
+    @IBAction func alcoholSearchButtonPressed(_ sender: Any) {
+        alcoholSearchStackview.isHidden = false
     }
     
     // MARK: - Navigation

@@ -15,42 +15,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Drink Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IT0-pO-9j4">
-                                <rect key="frame" x="133" y="136" width="148" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voa-Rd-PWQ">
-                                <rect key="frame" x="140" y="283" width="134" height="30"/>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="searchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="7Tg-zY-Oqd"/>
-                                    <segue destination="9Dx-4A-VmX" kind="show" identifier="searchIdentifier" id="5Qj-2W-xYe"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-Pn-MBt">
-                                <rect key="frame" x="100" y="199" width="214" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="P06-77-WQ7">
+                                <rect key="frame" x="8" y="96" width="398" height="100.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can search a number of ways..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJy-Rr-FRw">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EW2-jj-Ebo">
+                                        <rect key="frame" x="0.0" y="30.5" width="398" height="30"/>
+                                        <state key="normal" title="Search by cocktail name"/>
+                                        <connections>
+                                            <action selector="nameSearchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="FxG-od-7O4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-P5-3Ro">
+                                        <rect key="frame" x="0.0" y="70.5" width="398" height="30"/>
+                                        <state key="normal" title="Search by alcohol name"/>
+                                        <connections>
+                                            <action selector="alcoholSearchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="nbf-3j-LMS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bhr-ZO-wsS">
+                                <rect key="frame" x="8" y="216.5" width="398" height="74"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter drink name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-Pn-MBt">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voa-Rd-PWQ">
+                                        <rect key="frame" x="0.0" y="44" width="398" height="30"/>
+                                        <state key="normal" title="Search"/>
+                                        <connections>
+                                            <action selector="searchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="7Tg-zY-Oqd"/>
+                                            <segue destination="9Dx-4A-VmX" kind="show" identifier="searchIdentifier" id="5Qj-2W-xYe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xBs-su-TBC">
+                                <rect key="frame" x="8" y="310.5" width="398" height="74"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter drink name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="87A-IA-LjW">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFi-du-QBl">
+                                        <rect key="frame" x="0.0" y="44" width="398" height="30"/>
+                                        <state key="normal" title="Search"/>
+                                        <connections>
+                                            <action selector="searchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="oGu-qb-2Mp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="voa-Rd-PWQ" firstAttribute="top" secondItem="gQT-Pn-MBt" secondAttribute="bottom" constant="50" id="6A1-Xu-Svj"/>
-                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="gQT-Pn-MBt" secondAttribute="trailing" constant="100" id="FQu-jQ-EMh"/>
-                            <constraint firstItem="gQT-Pn-MBt" firstAttribute="top" secondItem="IT0-pO-9j4" secondAttribute="bottom" constant="42" id="S6q-vM-XcP"/>
-                            <constraint firstItem="gQT-Pn-MBt" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="100" id="c38-SS-oXB"/>
-                            <constraint firstItem="IT0-pO-9j4" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="133" id="czg-kW-Y0B"/>
-                            <constraint firstItem="voa-Rd-PWQ" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="140" id="e8p-PW-erX"/>
-                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="voa-Rd-PWQ" secondAttribute="trailing" constant="140" id="lZ1-eQ-YsX"/>
-                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="IT0-pO-9j4" secondAttribute="trailing" constant="133" id="u0k-9f-EV1"/>
-                            <constraint firstItem="IT0-pO-9j4" firstAttribute="top" secondItem="SW8-FM-GdO" secondAttribute="top" constant="48" id="vBo-sV-50v"/>
+                            <constraint firstItem="xBs-su-TBC" firstAttribute="top" secondItem="bhr-ZO-wsS" secondAttribute="bottom" constant="20" id="Blz-Tp-ukP"/>
+                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="xBs-su-TBC" secondAttribute="trailing" constant="8" id="KZW-Jd-iKf"/>
+                            <constraint firstItem="xBs-su-TBC" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="8" id="NKx-gj-H2h"/>
+                            <constraint firstItem="P06-77-WQ7" firstAttribute="top" secondItem="SW8-FM-GdO" secondAttribute="top" constant="8" id="P59-em-Mcc"/>
+                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="bhr-ZO-wsS" secondAttribute="trailing" constant="8" id="Pmi-Po-Hlb"/>
+                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="P06-77-WQ7" secondAttribute="trailing" constant="8" id="VRm-3z-GPa"/>
+                            <constraint firstItem="P06-77-WQ7" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="8" id="bZk-a4-Sz0"/>
+                            <constraint firstItem="bhr-ZO-wsS" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="8" id="cPF-AA-lXB"/>
+                            <constraint firstItem="bhr-ZO-wsS" firstAttribute="top" secondItem="P06-77-WQ7" secondAttribute="bottom" constant="20" id="mX7-SS-ca9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SW8-FM-GdO"/>
                     </view>
                     <navigationItem key="navigationItem" id="XTx-Oy-MWa"/>
                     <connections>
+                        <outlet property="alcoholSearchButton" destination="JP1-P5-3Ro" id="pNi-I8-OxE"/>
+                        <outlet property="alcoholSearchStackview" destination="xBs-su-TBC" id="j9I-Sr-yhq"/>
+                        <outlet property="nameSearchButton" destination="EW2-jj-Ebo" id="qfe-St-v9Y"/>
+                        <outlet property="nameSearchStackview" destination="bhr-ZO-wsS" id="JKH-aK-GJN"/>
                         <outlet property="searchButton" destination="voa-Rd-PWQ" id="cP3-el-xQd"/>
                         <outlet property="searchTextField" destination="gQT-Pn-MBt" id="zKD-Vv-MzW"/>
                     </connections>
