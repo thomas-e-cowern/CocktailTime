@@ -15,7 +15,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        CocktailController.fetchCocktsilResults(with: "margarita") { (cocktails) in
+        CocktailController.fetchCocktsilResults(with: "rum") { (cocktails) in
             guard let fetchedCocktails = cocktails else { return }
             self.cocktailList = fetchedCocktails
             DispatchQueue.main.async {

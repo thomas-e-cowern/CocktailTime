@@ -17,7 +17,7 @@ class CocktailDetailViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var ingredientsTableView: UITableView!
     
     // Properties
-    var ingredientsAndMeasures = [[String]]()
+    var ingredientsAndMeasures = [String]()
     
     var cocktail: Cocktail? {
         didSet {
@@ -35,10 +35,7 @@ class CocktailDetailViewController: UIViewController, UITableViewDelegate, UITab
         guard let cocktail = cocktail else { return }
         
         ingredientsAndMeasures = Helper.createIngredientList(cocktail: cocktail)
-        print("IAM: \(ingredientsAndMeasures)")
-        
     }
-    
 
     // MARK: - Methods
     func updateViews() {
@@ -58,7 +55,10 @@ class CocktailDetailViewController: UIViewController, UITableViewDelegate, UITab
             }
             
             cocktailInstructionsText.text = cocktail.instructions
-//            print(cocktail)
+            cocktailInstructionsText.translatesAutoresizingMaskIntoConstraints = true
+            cocktailInstructionsText.sizeToFit()
+            cocktailInstructionsText.isScrollEnabled = false
+
         } else {
             self.title = "Else If"
         }
@@ -71,8 +71,7 @@ class CocktailDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
-        print("IP: \(ingredientsAndMeasures[indexPath.row][0])")
-        let text = "\(ingredientsAndMeasures[indexPath.row][0]) \()"
+        let text = "\(ingredientsAndMeasures[indexPath.row])"
         cell.textLabel?.text = text
         return cell
     }
