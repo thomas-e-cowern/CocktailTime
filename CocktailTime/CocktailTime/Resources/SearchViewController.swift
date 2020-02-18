@@ -14,7 +14,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     
-    var searchText = ""
+    var searchText = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +25,15 @@ class SearchViewController: UIViewController {
     
     // MARK: - Methods
     @IBAction func searchButtonPressed(_ sender: Any) {
-        guard let text = searchTextField.text else { return }
-        searchText = text
+        // Starts the whole show....
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "searchIdentifier" {
+            guard let searchText = searchTextField.text else { return }
             let destinationVC = segue.destination as! TableViewController
+            print("SC in SVC: \(searchText)")
             destinationVC.cocktailName = searchText
         }
     }

@@ -26,10 +26,10 @@
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="7Tg-zY-Oqd"/>
-                                    <segue destination="9Dx-4A-VmX" kind="show" identifier="searchIdentifier" id="WaV-KC-AiS"/>
+                                    <segue destination="9Dx-4A-VmX" kind="show" identifier="searchIdentifier" id="5Qj-2W-xYe"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-Pn-MBt">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-Pn-MBt">
                                 <rect key="frame" x="100" y="199" width="214" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>

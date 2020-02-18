@@ -11,12 +11,21 @@ import UIKit
 class TableViewController: UITableViewController {
     
     
-    var cocktailName = ""
+    var cocktailName: String?
+    
     var cocktailList = [Cocktail]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        fetchCocktails()
+        
+    }
+    
+    func fetchCocktails() {
+        guard let cocktailName = cocktailName else {
+            print("Error in fetch cocktails")
+            return
+        }
         CocktailController.fetchCocktsilResults(with: cocktailName) { (cocktails) in
             guard let fetchedCocktails = cocktails else { return }
             self.cocktailList = fetchedCocktails
@@ -24,10 +33,8 @@ class TableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-        
-//        print(cocktailList)
     }
-
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
