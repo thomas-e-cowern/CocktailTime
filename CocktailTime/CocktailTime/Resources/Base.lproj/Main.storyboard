@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Po-m3-TfZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CM0-te-O9n">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,6 +7,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="sJO-g9-OnT">
+            <objects>
+                <viewController id="WOc-UJ-sSo" customClass="SearchViewController" customModule="CocktailTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="seO-xx-tf1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Drink Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IT0-pO-9j4">
+                                <rect key="frame" x="133" y="136" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voa-Rd-PWQ">
+                                <rect key="frame" x="140" y="283" width="134" height="30"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="7Tg-zY-Oqd"/>
+                                    <segue destination="9Dx-4A-VmX" kind="show" identifier="searchIdentifier" id="WaV-KC-AiS"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-Pn-MBt">
+                                <rect key="frame" x="100" y="199" width="214" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="voa-Rd-PWQ" firstAttribute="top" secondItem="gQT-Pn-MBt" secondAttribute="bottom" constant="50" id="6A1-Xu-Svj"/>
+                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="gQT-Pn-MBt" secondAttribute="trailing" constant="100" id="FQu-jQ-EMh"/>
+                            <constraint firstItem="gQT-Pn-MBt" firstAttribute="top" secondItem="IT0-pO-9j4" secondAttribute="bottom" constant="42" id="S6q-vM-XcP"/>
+                            <constraint firstItem="gQT-Pn-MBt" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="100" id="c38-SS-oXB"/>
+                            <constraint firstItem="IT0-pO-9j4" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="133" id="czg-kW-Y0B"/>
+                            <constraint firstItem="voa-Rd-PWQ" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="140" id="e8p-PW-erX"/>
+                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="voa-Rd-PWQ" secondAttribute="trailing" constant="140" id="lZ1-eQ-YsX"/>
+                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="IT0-pO-9j4" secondAttribute="trailing" constant="133" id="u0k-9f-EV1"/>
+                            <constraint firstItem="IT0-pO-9j4" firstAttribute="top" secondItem="SW8-FM-GdO" secondAttribute="top" constant="48" id="vBo-sV-50v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SW8-FM-GdO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XTx-Oy-MWa"/>
+                    <connections>
+                        <outlet property="searchButton" destination="voa-Rd-PWQ" id="cP3-el-xQd"/>
+                        <outlet property="searchTextField" destination="gQT-Pn-MBt" id="zKD-Vv-MzW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dhN-r9-bBB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6255" y="-696"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="wT6-Kb-4uk">
             <objects>
@@ -67,7 +119,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsM-cR-dBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1813.0434782608697" y="55.580357142857139"/>
+            <point key="canvasLocation" x="-5506" y="-696"/>
         </scene>
         <!--Cocktail Detail View Controller-->
         <scene sceneID="DOB-lV-94h">
@@ -147,25 +199,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srs-Rx-8jR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2760.8695652173915" y="55.580357142857139"/>
+            <point key="canvasLocation" x="-4735" y="-696"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="dle-J7-nBl">
+        <scene sceneID="R63-Rf-5t0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Po-m3-TfZ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CM0-te-O9n" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T5k-Xw-XJ7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y4e-8R-SZR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9Dx-4A-VmX" kind="relationship" relationship="rootViewController" id="fd3-oJ-6P9"/>
+                        <segue destination="WOc-UJ-sSo" kind="relationship" relationship="rootViewController" id="zJb-8v-8pb"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="00Y-YY-e8n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kak-1x-ffO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902.89855072463774" y="55.580357142857139"/>
+            <point key="canvasLocation" x="-7023" y="-696"/>
         </scene>
     </scenes>
 </document>

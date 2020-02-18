@@ -12,7 +12,7 @@ class Helper {
     
     static func createIngredientList (cocktail: Cocktail) -> [String] {
         
-        //
+        // Variables
         var finalIngredientArray = [String]()
         var finalMeasureArray = [String]()
         var finalCombinedArray = [[String]]()
@@ -42,7 +42,6 @@ class Helper {
         }
         // Combine the arrays
         func combineArrays (ingredients: [String], measures: [String]) -> [String] {
-            
             var combinedArray = [String]()
             let ingCount = ingredients.count
             let meaCount = measures.count
@@ -68,7 +67,6 @@ class Helper {
         if combinedArrays == [] {
             return ["No Ingredients Listed"]
         }
-        
         return combinedArrays
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4116204623FC149A000F25E3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4116204523FC149A000F25E3 /* Helper.swift */; };
+		4116204823FC4F29000F25E3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4116204723FC4F29000F25E3 /* SearchViewController.swift */; };
 		41361ED423F9AD9D0036D7E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41361ED323F9AD9D0036D7E3 /* AppDelegate.swift */; };
 		41361ED623F9AD9D0036D7E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41361ED523F9AD9D0036D7E3 /* SceneDelegate.swift */; };
 		41361EDB23F9AD9D0036D7E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41361ED923F9AD9D0036D7E3 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		4116204523FC149A000F25E3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = CocktailTime/Views/Helper.swift; sourceTree = SOURCE_ROOT; };
+		4116204723FC4F29000F25E3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = CocktailTime/Resources/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		41361ED023F9AD9D0036D7E3 /* CocktailTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocktailTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41361ED323F9AD9D0036D7E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41361ED523F9AD9D0036D7E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		414FEE4023FAD4C8001305FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4116204723FC4F29000F25E3 /* SearchViewController.swift */,
 				41A7D53923FB0A69006EF4A7 /* CocktailDetailViewController.swift */,
 				41A7D53723FAE3FE006EF4A7 /* CocktailTableViewCell.swift */,
 				414FEE3B23FACB7A001305FA /* TableViewController.swift */,
@@ -309,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4116204823FC4F29000F25E3 /* SearchViewController.swift in Sources */,
 				414FEE3E23FAD0AB001305FA /* CocktailController.swift in Sources */,
 				414FEE3C23FACB7A001305FA /* TableViewController.swift in Sources */,
 				41A7D53823FAE3FE006EF4A7 /* CocktailTableViewCell.swift in Sources */,

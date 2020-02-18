@@ -10,12 +10,14 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
+    
+    var cocktailName = ""
     var cocktailList = [Cocktail]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        CocktailController.fetchCocktsilResults(with: "rum") { (cocktails) in
+        CocktailController.fetchCocktsilResults(with: cocktailName) { (cocktails) in
             guard let fetchedCocktails = cocktails else { return }
             self.cocktailList = fetchedCocktails
             DispatchQueue.main.async {
