@@ -40,7 +40,7 @@ class Helper {
                 finalMeasureArray.append(measure ?? "")
             }
         }
-        
+        // Combine the arrays
         func combineArrays (ingredients: [String], measures: [String]) -> [String] {
             
             var combinedArray = [String]()
@@ -64,6 +64,10 @@ class Helper {
         }
         
         let combinedArrays = combineArrays(ingredients: finalIngredientArray, measures: finalMeasureArray)
+        
+        if combinedArrays == [] {
+            return ["No Ingredients Listed"]
+        }
         
         return combinedArrays
     }
