@@ -15,6 +15,9 @@ class CustomAlertViewController: UIViewController {
     @IBOutlet weak var alertLabel: UILabel!
     @IBOutlet weak var alertTextField: UITextField!
     @IBOutlet weak var alertSearchButton: UIButton!
+    @IBOutlet weak var searchErrorLable: UILabel!
+    @IBOutlet weak var searchErrorView: UIView!
+    
     
     // MARK: - Properties
     var delegate: CustomAlertViewDelegate?
@@ -49,8 +52,16 @@ class CustomAlertViewController: UIViewController {
     
     @IBAction func searchButtonPressed(_ sender: Any) {
         alertTextField.resignFirstResponder()
-        delegate?.searchButtonTapped(alertTextFieldValue: alertTextField.text ?? "")
-        self.dismiss(animated: true, completion: nil)
+        if alertTextField.text == "" {
+            searchErrorView.isHidden = false
+        } else {
+            delegate?.searchButtonTapped(alertTextFieldValue: alertTextField.text ?? "")
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func errorOkButtonPressed(_ sender: Any) {
+        searchErrorView.isHidden = true
     }
 }
 

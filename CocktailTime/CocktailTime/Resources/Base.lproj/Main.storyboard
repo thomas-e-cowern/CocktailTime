@@ -136,6 +136,37 @@
                                             <action selector="searchButtonPressed:" destination="oYb-LA-Te5" eventType="touchUpInside" id="r6f-s2-RwN"/>
                                         </connections>
                                     </button>
+                                    <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goj-AU-mxV">
+                                        <rect key="frame" x="0.0" y="20" width="240" height="128"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJA-ZR-KTE">
+                                                <rect key="frame" x="74" y="78" width="92" height="30"/>
+                                                <state key="normal" title="Ok"/>
+                                                <connections>
+                                                    <action selector="errorOkButtonPressed:" destination="oYb-LA-Te5" eventType="touchUpInside" id="jEU-RQ-yjA"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid cocktail name..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UN-Gd-5vh">
+                                                <rect key="frame" x="20" y="20" width="200" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="zab-Sd-LZH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="5UN-Gd-5vh" secondAttribute="trailing" constant="20" id="4Fo-oF-Bgb"/>
+                                            <constraint firstItem="5UN-Gd-5vh" firstAttribute="top" secondItem="goj-AU-mxV" secondAttribute="top" constant="20" symbolic="YES" id="Htw-Fi-WVi"/>
+                                            <constraint firstItem="wJA-ZR-KTE" firstAttribute="centerX" secondItem="goj-AU-mxV" secondAttribute="centerX" id="KIn-gl-pAZ"/>
+                                            <constraint firstItem="wJA-ZR-KTE" firstAttribute="leading" secondItem="goj-AU-mxV" secondAttribute="leading" constant="74" id="S7g-9Y-jj8"/>
+                                            <constraint firstItem="5UN-Gd-5vh" firstAttribute="leading" secondItem="goj-AU-mxV" secondAttribute="leading" constant="20" symbolic="YES" id="Wlj-oC-VkF"/>
+                                            <constraint firstAttribute="bottom" secondItem="wJA-ZR-KTE" secondAttribute="bottom" constant="20" id="tNZ-RH-h0r"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -146,6 +177,9 @@
                                     <constraint firstAttribute="trailing" secondItem="YBe-DV-URh" secondAttribute="trailing" constant="20" id="Iq1-oj-bl1"/>
                                     <constraint firstItem="YBe-DV-URh" firstAttribute="leading" secondItem="W9n-8a-zs9" secondAttribute="leading" constant="20" id="L6r-S0-CCs"/>
                                     <constraint firstItem="7eR-zX-Ri0" firstAttribute="top" secondItem="4bc-Yq-eAH" secondAttribute="bottom" constant="24" id="NDY-rP-X2p"/>
+                                    <constraint firstItem="goj-AU-mxV" firstAttribute="centerX" secondItem="W9n-8a-zs9" secondAttribute="centerX" id="Q4y-qU-2NS"/>
+                                    <constraint firstAttribute="bottom" secondItem="goj-AU-mxV" secondAttribute="bottom" constant="31" id="i4y-79-ylM"/>
+                                    <constraint firstItem="goj-AU-mxV" firstAttribute="width" secondItem="W9n-8a-zs9" secondAttribute="width" id="ovd-hJ-53g"/>
                                     <constraint firstItem="4bc-Yq-eAH" firstAttribute="leading" secondItem="W9n-8a-zs9" secondAttribute="leading" constant="20" id="pkA-SU-Sbb"/>
                                     <constraint firstAttribute="trailing" secondItem="7eR-zX-Ri0" secondAttribute="trailing" constant="35" id="q5w-Ga-e7S"/>
                                 </constraints>
@@ -153,6 +187,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="goj-AU-mxV" firstAttribute="top" secondItem="dad-0s-Dve" secondAttribute="top" constant="135" id="07I-TE-By7"/>
                             <constraint firstItem="dad-0s-Dve" firstAttribute="trailing" secondItem="W9n-8a-zs9" secondAttribute="trailing" constant="87" id="2gE-oz-GPP"/>
                             <constraint firstItem="dad-0s-Dve" firstAttribute="bottom" secondItem="W9n-8a-zs9" secondAttribute="bottom" constant="524" id="W7I-wi-Jsv"/>
                             <constraint firstItem="W9n-8a-zs9" firstAttribute="top" secondItem="dad-0s-Dve" secondAttribute="top" constant="115" id="mJ6-Hl-ftE"/>
@@ -166,11 +201,13 @@
                         <outlet property="alertSearchButton" destination="7eR-zX-Ri0" id="5vn-fh-N1Y"/>
                         <outlet property="alertTextField" destination="4bc-Yq-eAH" id="jju-FP-UbK"/>
                         <outlet property="alertView" destination="W9n-8a-zs9" id="1OA-3t-52M"/>
+                        <outlet property="searchErrorLable" destination="5UN-Gd-5vh" id="3kr-BO-VXW"/>
+                        <outlet property="searchErrorView" destination="goj-AU-mxV" id="T8i-TX-Seg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0F-e8-mFd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4346" y="-271"/>
+            <point key="canvasLocation" x="-4346.376811594203" y="-271.20535714285711"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="wT6-Kb-4uk">
