@@ -19,24 +19,24 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var alcoholSearchStackview: UIStackView!
     
     var searchText = String()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
     
     // MARK: - Methods
-    func showCustomAlert(title: String) {
+    func showCustomAlert(title: String){
         let customAlert = self.storyboard?.instantiateViewController(withIdentifier: "CustomAlertID") as! CustomAlertViewController
-               customAlert.providesPresentationContextTransitionStyle = true
-               customAlert.definesPresentationContext = true
-               customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-               customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-               customAlert.delegate = self
-               self.present(customAlert, animated: true, completion: nil)
-               customAlert.alertLabel.text = title
+        customAlert.providesPresentationContextTransitionStyle = true
+        customAlert.definesPresentationContext = true
+        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        customAlert.delegate = self
+        self.present(customAlert, animated: true, completion: nil)
+        customAlert.alertLabel.text = title
     }
     
     @IBAction func searchButtonPressed(_ sender: Any) {
@@ -44,29 +44,32 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func nameSearchButtonPressed(_ sender: Any) {
-       showCustomAlert(title: "Enter a cocktail name")
+        showCustomAlert(title: "Enter a cocktail name")
+        print("ST: \(searchText)")
     }
     
     @IBAction func alcoholSearchButtonPressed(_ sender: Any) {
-//        alcoholSearchStackview.isHidden = false
         showCustomAlert(title: "Enter a liquor")
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "searchIdentifier" {
-            guard let searchText = searchTextField.text else { return }
+//            let searchText = searchText
             let destinationVC = segue.destination as! TableViewController
             print("SC in SVC: \(searchText)")
             destinationVC.cocktailName = searchText
+        } else if segue.identifier == "CustomAlertID" {
+            let displayVC = segue.destination as! CustomAlertViewController
+            displayVC.delegate = self
         }
     }
 }
 
 extension SearchViewController: CustomAlertViewDelegate {
     func searchButtonTapped(alertTextFieldValue: String) {
-        print("TextField has value: \(alertTextFieldValue)")
-//        searchText = alertTextFieldValue
+        searchText = alertTextFieldValue
+        performSegue(withIdentifier: "searchIdentifier", sender: nil)
     }
     
     func cancelButtonTapped() {

@@ -29,7 +29,7 @@
                                         <state key="normal" title="Search by cocktail name"/>
                                         <connections>
                                             <action selector="nameSearchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="FxG-od-7O4"/>
-                                            <segue destination="oYb-LA-Te5" kind="show" identifier="CustomAlertID" id="HtS-Rd-iL4"/>
+                                            <segue destination="9Dx-4A-VmX" kind="show" identifier="searchIdentifier" id="VoQ-PG-yeh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-P5-3Ro">
@@ -98,7 +98,6 @@
                         <outlet property="nameSearchStackview" destination="bhr-ZO-wsS" id="JKH-aK-GJN"/>
                         <outlet property="searchButton" destination="voa-Rd-PWQ" id="cP3-el-xQd"/>
                         <outlet property="searchTextField" destination="gQT-Pn-MBt" id="zKD-Vv-MzW"/>
-                        <segue destination="9Dx-4A-VmX" kind="show" id="kWy-3c-BQz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhN-r9-bBB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -114,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9n-8a-zs9">
-                                <rect key="frame" x="87" y="203" width="240" height="135"/>
+                                <rect key="frame" x="87" y="159" width="240" height="179"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBe-DV-URh">
                                         <rect key="frame" x="20" y="16" width="200" height="20.5"/>
@@ -171,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0F-e8-mFd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4442.0289855072469" y="-696.42857142857144"/>
+            <point key="canvasLocation" x="-4346" y="-271"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="wT6-Kb-4uk">
