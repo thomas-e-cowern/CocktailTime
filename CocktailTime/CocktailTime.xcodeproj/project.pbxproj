@@ -17,6 +17,8 @@
 		41361EE323F9ADAA0036D7E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41361EE123F9ADAA0036D7E3 /* LaunchScreen.storyboard */; };
 		41361EEE23F9ADAA0036D7E3 /* CocktailTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41361EED23F9ADAA0036D7E3 /* CocktailTimeTests.swift */; };
 		41361EF923F9ADAA0036D7E3 /* CocktailTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41361EF823F9ADAA0036D7E3 /* CocktailTimeUITests.swift */; };
+		41426B4023FD6FB000EDA3F2 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41426B3F23FD6FB000EDA3F2 /* CustomAlertViewController.swift */; };
+		41426B4223FD70DC00EDA3F2 /* CustomAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41426B4123FD70DC00EDA3F2 /* CustomAlertViewDelegate.swift */; };
 		414FEE3C23FACB7A001305FA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414FEE3B23FACB7A001305FA /* TableViewController.swift */; };
 		414FEE3E23FAD0AB001305FA /* CocktailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414FEE3D23FAD0AA001305FA /* CocktailController.swift */; };
 		41A7D53823FAE3FE006EF4A7 /* CocktailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A7D53723FAE3FE006EF4A7 /* CocktailTableViewCell.swift */; };
@@ -58,6 +60,8 @@
 		41361EF423F9ADAA0036D7E3 /* CocktailTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocktailTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41361EF823F9ADAA0036D7E3 /* CocktailTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailTimeUITests.swift; sourceTree = "<group>"; };
 		41361EFA23F9ADAA0036D7E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41426B3F23FD6FB000EDA3F2 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomAlertViewController.swift; path = CocktailTime/Resources/CustomAlertViewController.swift; sourceTree = SOURCE_ROOT; };
+		41426B4123FD70DC00EDA3F2 /* CustomAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewDelegate.swift; sourceTree = "<group>"; };
 		414FEE3B23FACB7A001305FA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		414FEE3D23FAD0AA001305FA /* CocktailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailController.swift; sourceTree = "<group>"; };
 		41A7D53723FAE3FE006EF4A7 /* CocktailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CocktailTableViewCell.swift; path = CocktailTime/Views/CocktailTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -150,6 +154,7 @@
 		414FEE4023FAD4C8001305FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				41426B3F23FD6FB000EDA3F2 /* CustomAlertViewController.swift */,
 				4116204723FC4F29000F25E3 /* SearchViewController.swift */,
 				41A7D53923FB0A69006EF4A7 /* CocktailDetailViewController.swift */,
 				41A7D53723FAE3FE006EF4A7 /* CocktailTableViewCell.swift */,
@@ -173,6 +178,7 @@
 				41361ED323F9AD9D0036D7E3 /* AppDelegate.swift */,
 				41361ED523F9AD9D0036D7E3 /* SceneDelegate.swift */,
 				41361ED923F9AD9D0036D7E3 /* Main.storyboard */,
+				41426B4123FD70DC00EDA3F2 /* CustomAlertViewDelegate.swift */,
 				41361EDF23F9ADAA0036D7E3 /* Assets.xcassets */,
 				41361EE123F9ADAA0036D7E3 /* LaunchScreen.storyboard */,
 				41361EE423F9ADAA0036D7E3 /* Info.plist */,
@@ -320,6 +326,8 @@
 				41361EDE23F9AD9D0036D7E3 /* CocktailTime.xcdatamodeld in Sources */,
 				41E7F25323F9D2E900CF0511 /* Cocktail.swift in Sources */,
 				4116204623FC149A000F25E3 /* Helper.swift in Sources */,
+				41426B4023FD6FB000EDA3F2 /* CustomAlertViewController.swift in Sources */,
+				41426B4223FD70DC00EDA3F2 /* CustomAlertViewDelegate.swift in Sources */,
 				41361ED623F9AD9D0036D7E3 /* SceneDelegate.swift in Sources */,
 				41A7D53A23FB0A69006EF4A7 /* CocktailDetailViewController.swift in Sources */,
 			);

@@ -33,7 +33,14 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func nameSearchButtonPressed(_ sender: Any) {
-        nameSearchStackview.isHidden = false
+//        nameSearchStackview.isHidden = false
+        let customAlert = self.storyboard?.instantiateViewController(withIdentifier: "CustomAlertID") as! CustomAlertViewController
+        customAlert.providesPresentationContextTransitionStyle = true
+        customAlert.definesPresentationContext = true
+        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        customAlert.delegate = self
+        self.present(customAlert, animated: true, completion: nil)
     }
     
     @IBAction func alcoholSearchButtonPressed(_ sender: Any) {
@@ -49,6 +56,14 @@ class SearchViewController: UIViewController {
             destinationVC.cocktailName = searchText
         }
     }
-    
+}
 
+extension SearchViewController: CustomAlertViewDelegate {
+    func searchButtonTapped(alertTextFieldValue: String) {
+        print("TextField has value: \(alertTextFieldValue)")
+    }
+    
+    func cancelButtonTapped() {
+        print("cancelButtonTapped")
+    }
 }

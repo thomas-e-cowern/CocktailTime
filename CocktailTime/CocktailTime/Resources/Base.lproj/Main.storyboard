@@ -29,6 +29,7 @@
                                         <state key="normal" title="Search by cocktail name"/>
                                         <connections>
                                             <action selector="nameSearchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="FxG-od-7O4"/>
+                                            <segue destination="oYb-LA-Te5" kind="show" identifier="CustomAlertID" id="HtS-Rd-iL4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-P5-3Ro">
@@ -103,6 +104,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhN-r9-bBB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-6255" y="-696"/>
+        </scene>
+        <!--Custom Alert View Controller-->
+        <scene sceneID="Qqw-W0-zlJ">
+            <objects>
+                <viewController id="oYb-LA-Te5" customClass="CustomAlertViewController" customModule="CocktailTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kxf-hp-Q0q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9n-8a-zs9">
+                                <rect key="frame" x="87" y="203" width="240" height="135"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBe-DV-URh">
+                                        <rect key="frame" x="20" y="16" width="200" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4bc-Yq-eAH">
+                                        <rect key="frame" x="20" y="60.5" width="200" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eR-zX-Ri0">
+                                        <rect key="frame" x="35" y="118.5" width="170" height="30"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <state key="normal" title="Search">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchButtonPressed:" destination="oYb-LA-Te5" eventType="touchUpInside" id="r6f-s2-RwN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="7eR-zX-Ri0" firstAttribute="leading" secondItem="W9n-8a-zs9" secondAttribute="leading" constant="35" id="AWG-NC-kWe"/>
+                                    <constraint firstItem="4bc-Yq-eAH" firstAttribute="top" secondItem="YBe-DV-URh" secondAttribute="bottom" constant="24" id="CrD-BJ-Ars"/>
+                                    <constraint firstItem="YBe-DV-URh" firstAttribute="top" secondItem="W9n-8a-zs9" secondAttribute="top" constant="16" id="FxW-Lo-0jL"/>
+                                    <constraint firstAttribute="trailing" secondItem="4bc-Yq-eAH" secondAttribute="trailing" constant="20" id="HVN-8r-wt1"/>
+                                    <constraint firstAttribute="trailing" secondItem="YBe-DV-URh" secondAttribute="trailing" constant="20" id="Iq1-oj-bl1"/>
+                                    <constraint firstItem="YBe-DV-URh" firstAttribute="leading" secondItem="W9n-8a-zs9" secondAttribute="leading" constant="20" id="L6r-S0-CCs"/>
+                                    <constraint firstItem="7eR-zX-Ri0" firstAttribute="top" secondItem="4bc-Yq-eAH" secondAttribute="bottom" constant="24" id="NDY-rP-X2p"/>
+                                    <constraint firstItem="4bc-Yq-eAH" firstAttribute="leading" secondItem="W9n-8a-zs9" secondAttribute="leading" constant="20" id="pkA-SU-Sbb"/>
+                                    <constraint firstAttribute="trailing" secondItem="7eR-zX-Ri0" secondAttribute="trailing" constant="35" id="q5w-Ga-e7S"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dad-0s-Dve" firstAttribute="trailing" secondItem="W9n-8a-zs9" secondAttribute="trailing" constant="87" id="2gE-oz-GPP"/>
+                            <constraint firstItem="dad-0s-Dve" firstAttribute="bottom" secondItem="W9n-8a-zs9" secondAttribute="bottom" constant="524" id="W7I-wi-Jsv"/>
+                            <constraint firstItem="W9n-8a-zs9" firstAttribute="top" secondItem="dad-0s-Dve" secondAttribute="top" constant="115" id="mJ6-Hl-ftE"/>
+                            <constraint firstItem="W9n-8a-zs9" firstAttribute="leading" secondItem="dad-0s-Dve" secondAttribute="leading" constant="87" id="txs-Yt-Zom"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dad-0s-Dve"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qo7-Ku-B22"/>
+                    <connections>
+                        <outlet property="alertLabel" destination="YBe-DV-URh" id="GVb-dl-rXh"/>
+                        <outlet property="alertSearchButton" destination="7eR-zX-Ri0" id="5vn-fh-N1Y"/>
+                        <outlet property="alertTextField" destination="4bc-Yq-eAH" id="jju-FP-UbK"/>
+                        <outlet property="alertView" destination="W9n-8a-zs9" id="1OA-3t-52M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a0F-e8-mFd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6236.2318840579719" y="27.455357142857142"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="wT6-Kb-4uk">
