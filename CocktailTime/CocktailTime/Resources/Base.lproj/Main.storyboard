@@ -108,7 +108,7 @@
         <!--Custom Alert View Controller-->
         <scene sceneID="Qqw-W0-zlJ">
             <objects>
-                <viewController id="oYb-LA-Te5" customClass="CustomAlertViewController" customModule="CocktailTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomAlertID" id="oYb-LA-Te5" customClass="CustomAlertViewController" customModule="CocktailTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kxf-hp-Q0q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

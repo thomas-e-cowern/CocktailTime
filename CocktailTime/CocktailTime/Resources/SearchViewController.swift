@@ -40,6 +40,7 @@ class SearchViewController: UIViewController {
         customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         customAlert.delegate = self
+        customAlert.alertLabel.text = "Enter a cocktail name"
         self.present(customAlert, animated: true, completion: nil)
     }
     
