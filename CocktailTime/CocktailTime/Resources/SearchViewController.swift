@@ -28,24 +28,28 @@ class SearchViewController: UIViewController {
     
     
     // MARK: - Methods
+    func showCustomAlert(title: String) {
+        let customAlert = self.storyboard?.instantiateViewController(withIdentifier: "CustomAlertID") as! CustomAlertViewController
+               customAlert.providesPresentationContextTransitionStyle = true
+               customAlert.definesPresentationContext = true
+               customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+               customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+               customAlert.delegate = self
+               self.present(customAlert, animated: true, completion: nil)
+               customAlert.alertLabel.text = title
+    }
+    
     @IBAction func searchButtonPressed(_ sender: Any) {
         // Starts the whole show....
     }
     
     @IBAction func nameSearchButtonPressed(_ sender: Any) {
-//        nameSearchStackview.isHidden = false
-        let customAlert = self.storyboard?.instantiateViewController(withIdentifier: "CustomAlertID") as! CustomAlertViewController
-        customAlert.providesPresentationContextTransitionStyle = true
-        customAlert.definesPresentationContext = true
-        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        customAlert.delegate = self
-        customAlert.alertLabel.text = "Enter a cocktail name"
-        self.present(customAlert, animated: true, completion: nil)
+       showCustomAlert(title: "Enter a cocktail name")
     }
     
     @IBAction func alcoholSearchButtonPressed(_ sender: Any) {
-        alcoholSearchStackview.isHidden = false
+//        alcoholSearchStackview.isHidden = false
+        showCustomAlert(title: "Enter a liquor")
     }
     
     // MARK: - Navigation
@@ -62,6 +66,7 @@ class SearchViewController: UIViewController {
 extension SearchViewController: CustomAlertViewDelegate {
     func searchButtonTapped(alertTextFieldValue: String) {
         print("TextField has value: \(alertTextFieldValue)")
+//        searchText = alertTextFieldValue
     }
     
     func cancelButtonTapped() {

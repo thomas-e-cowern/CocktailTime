@@ -53,7 +53,6 @@ class CustomAlertViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-
     /*
     // MARK: - Navigation
 
