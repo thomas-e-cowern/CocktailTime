@@ -77,8 +77,8 @@ class CocktailController: UIViewController {
                 completion(cocktails)
             } catch {
                 print("😡 👎 There was an error in \(#function) ; \(error) ; \(error.localizedDescription)")
-                
-                completion(nil)
+                let cocktailError = Cocktail(id: "", name: "We can't find that cocktail!  Hit the back button and try again", glass: "None", thumbnail: "None", instructions: "None")
+                completion([cocktailError])
                 return
             }
         }.resume()

@@ -12,11 +12,8 @@ class SearchViewController: UIViewController {
     
     // Outlets
     @IBOutlet weak var nameSearchButton: UIButton!
-    @IBOutlet weak var searchTextField: UITextField!
-    @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var alcoholSearchButton: UIButton!
-    @IBOutlet weak var nameSearchStackview: UIStackView!
-    @IBOutlet weak var alcoholSearchStackview: UIStackView!
+
     
     var searchText = String()
     
@@ -55,7 +52,6 @@ class SearchViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "searchIdentifier" {
-//            let searchText = searchText
             let destinationVC = segue.destination as! TableViewController
             print("SC in SVC: \(searchText)")
             destinationVC.cocktailName = searchText

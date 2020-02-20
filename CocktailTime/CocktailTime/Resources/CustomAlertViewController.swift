@@ -15,9 +15,9 @@ class CustomAlertViewController: UIViewController {
     @IBOutlet weak var alertLabel: UILabel!
     @IBOutlet weak var alertTextField: UITextField!
     @IBOutlet weak var alertSearchButton: UIButton!
+    @IBOutlet weak var alertSearchCancelButton: UIButton!
     @IBOutlet weak var searchErrorLable: UILabel!
     @IBOutlet weak var searchErrorView: UIView!
-    
     
     // MARK: - Properties
     var delegate: CustomAlertViewDelegate?
@@ -34,10 +34,10 @@ class CustomAlertViewController: UIViewController {
         animateView()
     }
     
-    
     // MARK: - Methods
     func setupView() {
         alertView.layer.cornerRadius = 15
+        searchErrorView.layer.cornerRadius = 15
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
     }
     
@@ -58,6 +58,10 @@ class CustomAlertViewController: UIViewController {
             delegate?.searchButtonTapped(alertTextFieldValue: alertTextField.text ?? "")
             self.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func searchCancelButtonPresses(_ sender: Any) {
+         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func errorOkButtonPressed(_ sender: Any) {

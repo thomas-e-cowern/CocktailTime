@@ -15,89 +15,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="P06-77-WQ7">
-                                <rect key="frame" x="8" y="96" width="398" height="100.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can search a number of ways..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJy-Rr-FRw">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EW2-jj-Ebo">
-                                        <rect key="frame" x="0.0" y="30.5" width="398" height="30"/>
-                                        <state key="normal" title="Search by cocktail name"/>
-                                        <connections>
-                                            <action selector="nameSearchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="FxG-od-7O4"/>
-                                            <segue destination="9Dx-4A-VmX" kind="show" identifier="searchIdentifier" id="VoQ-PG-yeh"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-P5-3Ro">
-                                        <rect key="frame" x="0.0" y="70.5" width="398" height="30"/>
-                                        <state key="normal" title="Search by alcohol name"/>
-                                        <connections>
-                                            <action selector="alcoholSearchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="nbf-3j-LMS"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bhr-ZO-wsS">
-                                <rect key="frame" x="8" y="216.5" width="398" height="74"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter drink name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-Pn-MBt">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voa-Rd-PWQ">
-                                        <rect key="frame" x="0.0" y="44" width="398" height="30"/>
-                                        <state key="normal" title="Search"/>
-                                        <connections>
-                                            <action selector="searchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="7Tg-zY-Oqd"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xBs-su-TBC">
-                                <rect key="frame" x="8" y="310.5" width="398" height="74"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter drink name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="87A-IA-LjW">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFi-du-QBl">
-                                        <rect key="frame" x="0.0" y="44" width="398" height="30"/>
-                                        <state key="normal" title="Search"/>
-                                        <connections>
-                                            <action selector="searchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="oGu-qb-2Mp"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can search a number of ways..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJy-Rr-FRw">
+                                <rect key="frame" x="24" y="108" width="366" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EW2-jj-Ebo">
+                                <rect key="frame" x="50" y="152.5" width="314" height="30"/>
+                                <state key="normal" title="Search by cocktail name"/>
+                                <connections>
+                                    <action selector="nameSearchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="FxG-od-7O4"/>
+                                    <segue destination="9Dx-4A-VmX" kind="show" identifier="searchIdentifier" id="VoQ-PG-yeh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-P5-3Ro">
+                                <rect key="frame" x="50" y="206.5" width="314" height="30"/>
+                                <state key="normal" title="Search by alcohol name"/>
+                                <connections>
+                                    <action selector="alcoholSearchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="nbf-3j-LMS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="xBs-su-TBC" firstAttribute="top" secondItem="bhr-ZO-wsS" secondAttribute="bottom" constant="20" id="Blz-Tp-ukP"/>
-                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="xBs-su-TBC" secondAttribute="trailing" constant="8" id="KZW-Jd-iKf"/>
-                            <constraint firstItem="xBs-su-TBC" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="8" id="NKx-gj-H2h"/>
-                            <constraint firstItem="P06-77-WQ7" firstAttribute="top" secondItem="SW8-FM-GdO" secondAttribute="top" constant="8" id="P59-em-Mcc"/>
-                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="bhr-ZO-wsS" secondAttribute="trailing" constant="8" id="Pmi-Po-Hlb"/>
-                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="P06-77-WQ7" secondAttribute="trailing" constant="8" id="VRm-3z-GPa"/>
-                            <constraint firstItem="P06-77-WQ7" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="8" id="bZk-a4-Sz0"/>
-                            <constraint firstItem="bhr-ZO-wsS" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="8" id="cPF-AA-lXB"/>
-                            <constraint firstItem="bhr-ZO-wsS" firstAttribute="top" secondItem="P06-77-WQ7" secondAttribute="bottom" constant="20" id="mX7-SS-ca9"/>
+                            <constraint firstItem="EW2-jj-Ebo" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="50" id="1RL-ZC-i3X"/>
+                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="JP1-P5-3Ro" secondAttribute="trailing" constant="50" id="7cc-Si-Nea"/>
+                            <constraint firstItem="oJy-Rr-FRw" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="24" id="J7s-AH-85a"/>
+                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="EW2-jj-Ebo" secondAttribute="trailing" constant="50" id="JOO-Zf-hOx"/>
+                            <constraint firstItem="JP1-P5-3Ro" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="50" id="Or8-S6-IjM"/>
+                            <constraint firstItem="EW2-jj-Ebo" firstAttribute="top" secondItem="oJy-Rr-FRw" secondAttribute="bottom" constant="24" id="VXX-V8-gIc"/>
+                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="oJy-Rr-FRw" secondAttribute="trailing" constant="24" id="Xkz-ts-cAu"/>
+                            <constraint firstItem="oJy-Rr-FRw" firstAttribute="top" secondItem="SW8-FM-GdO" secondAttribute="top" constant="20" id="pzx-o9-CdE"/>
+                            <constraint firstItem="JP1-P5-3Ro" firstAttribute="top" secondItem="EW2-jj-Ebo" secondAttribute="bottom" constant="24" id="w6K-Su-v6s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SW8-FM-GdO"/>
                     </view>
                     <navigationItem key="navigationItem" id="XTx-Oy-MWa"/>
                     <connections>
                         <outlet property="alcoholSearchButton" destination="JP1-P5-3Ro" id="pNi-I8-OxE"/>
-                        <outlet property="alcoholSearchStackview" destination="xBs-su-TBC" id="j9I-Sr-yhq"/>
                         <outlet property="nameSearchButton" destination="EW2-jj-Ebo" id="qfe-St-v9Y"/>
-                        <outlet property="nameSearchStackview" destination="bhr-ZO-wsS" id="JKH-aK-GJN"/>
-                        <outlet property="searchButton" destination="voa-Rd-PWQ" id="cP3-el-xQd"/>
-                        <outlet property="searchTextField" destination="gQT-Pn-MBt" id="zKD-Vv-MzW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhN-r9-bBB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -126,16 +83,34 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eR-zX-Ri0">
-                                        <rect key="frame" x="35" y="118.5" width="170" height="30"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <state key="normal" title="Search">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="searchButtonPressed:" destination="oYb-LA-Te5" eventType="touchUpInside" id="r6f-s2-RwN"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qfK-8O-EDy">
+                                        <rect key="frame" x="45" y="118.5" width="150" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehn-6C-dKl" userLabel="Cancel">
+                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="30"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="searchCancelButtonPresses:" destination="oYb-LA-Te5" eventType="touchUpInside" id="pzs-59-Uyg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eR-zX-Ri0">
+                                                <rect key="frame" x="77.5" y="0.0" width="72.5" height="30"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <state key="normal" title="Search">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="searchButtonPressed:" destination="oYb-LA-Te5" eventType="touchUpInside" id="r6f-s2-RwN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="uGB-n8-so6"/>
+                                        </constraints>
+                                    </stackView>
                                     <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goj-AU-mxV">
                                         <rect key="frame" x="0.0" y="20" width="240" height="128"/>
                                         <subviews>
@@ -161,6 +136,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="5UN-Gd-5vh" secondAttribute="trailing" constant="20" id="4Fo-oF-Bgb"/>
                                             <constraint firstItem="5UN-Gd-5vh" firstAttribute="top" secondItem="goj-AU-mxV" secondAttribute="top" constant="20" symbolic="YES" id="Htw-Fi-WVi"/>
+                                            <constraint firstItem="wJA-ZR-KTE" firstAttribute="top" secondItem="5UN-Gd-5vh" secondAttribute="bottom" constant="8" symbolic="YES" id="JRw-rd-X2x"/>
                                             <constraint firstItem="wJA-ZR-KTE" firstAttribute="centerX" secondItem="goj-AU-mxV" secondAttribute="centerX" id="KIn-gl-pAZ"/>
                                             <constraint firstItem="wJA-ZR-KTE" firstAttribute="leading" secondItem="goj-AU-mxV" secondAttribute="leading" constant="74" id="S7g-9Y-jj8"/>
                                             <constraint firstItem="5UN-Gd-5vh" firstAttribute="leading" secondItem="goj-AU-mxV" secondAttribute="leading" constant="20" symbolic="YES" id="Wlj-oC-VkF"/>
@@ -170,18 +146,17 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="7eR-zX-Ri0" firstAttribute="leading" secondItem="W9n-8a-zs9" secondAttribute="leading" constant="35" id="AWG-NC-kWe"/>
+                                    <constraint firstItem="qfK-8O-EDy" firstAttribute="top" secondItem="4bc-Yq-eAH" secondAttribute="bottom" constant="24" id="1a3-P6-Ry8"/>
                                     <constraint firstItem="4bc-Yq-eAH" firstAttribute="top" secondItem="YBe-DV-URh" secondAttribute="bottom" constant="24" id="CrD-BJ-Ars"/>
                                     <constraint firstItem="YBe-DV-URh" firstAttribute="top" secondItem="W9n-8a-zs9" secondAttribute="top" constant="16" id="FxW-Lo-0jL"/>
                                     <constraint firstAttribute="trailing" secondItem="4bc-Yq-eAH" secondAttribute="trailing" constant="20" id="HVN-8r-wt1"/>
                                     <constraint firstAttribute="trailing" secondItem="YBe-DV-URh" secondAttribute="trailing" constant="20" id="Iq1-oj-bl1"/>
                                     <constraint firstItem="YBe-DV-URh" firstAttribute="leading" secondItem="W9n-8a-zs9" secondAttribute="leading" constant="20" id="L6r-S0-CCs"/>
-                                    <constraint firstItem="7eR-zX-Ri0" firstAttribute="top" secondItem="4bc-Yq-eAH" secondAttribute="bottom" constant="24" id="NDY-rP-X2p"/>
                                     <constraint firstItem="goj-AU-mxV" firstAttribute="centerX" secondItem="W9n-8a-zs9" secondAttribute="centerX" id="Q4y-qU-2NS"/>
                                     <constraint firstAttribute="bottom" secondItem="goj-AU-mxV" secondAttribute="bottom" constant="31" id="i4y-79-ylM"/>
+                                    <constraint firstItem="qfK-8O-EDy" firstAttribute="centerX" secondItem="W9n-8a-zs9" secondAttribute="centerX" id="ndA-yS-7WD"/>
                                     <constraint firstItem="goj-AU-mxV" firstAttribute="width" secondItem="W9n-8a-zs9" secondAttribute="width" id="ovd-hJ-53g"/>
                                     <constraint firstItem="4bc-Yq-eAH" firstAttribute="leading" secondItem="W9n-8a-zs9" secondAttribute="leading" constant="20" id="pkA-SU-Sbb"/>
-                                    <constraint firstAttribute="trailing" secondItem="7eR-zX-Ri0" secondAttribute="trailing" constant="35" id="q5w-Ga-e7S"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -189,7 +164,7 @@
                         <constraints>
                             <constraint firstItem="goj-AU-mxV" firstAttribute="top" secondItem="dad-0s-Dve" secondAttribute="top" constant="135" id="07I-TE-By7"/>
                             <constraint firstItem="dad-0s-Dve" firstAttribute="trailing" secondItem="W9n-8a-zs9" secondAttribute="trailing" constant="87" id="2gE-oz-GPP"/>
-                            <constraint firstItem="dad-0s-Dve" firstAttribute="bottom" secondItem="W9n-8a-zs9" secondAttribute="bottom" constant="524" id="W7I-wi-Jsv"/>
+                            <constraint firstItem="dad-0s-Dve" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="W9n-8a-zs9" secondAttribute="bottom" constant="524" id="W7I-wi-Jsv"/>
                             <constraint firstItem="W9n-8a-zs9" firstAttribute="top" secondItem="dad-0s-Dve" secondAttribute="top" constant="115" id="mJ6-Hl-ftE"/>
                             <constraint firstItem="W9n-8a-zs9" firstAttribute="leading" secondItem="dad-0s-Dve" secondAttribute="leading" constant="87" id="txs-Yt-Zom"/>
                         </constraints>
@@ -199,6 +174,7 @@
                     <connections>
                         <outlet property="alertLabel" destination="YBe-DV-URh" id="GVb-dl-rXh"/>
                         <outlet property="alertSearchButton" destination="7eR-zX-Ri0" id="5vn-fh-N1Y"/>
+                        <outlet property="alertSearchCancelButton" destination="ehn-6C-dKl" id="cTv-ea-04z"/>
                         <outlet property="alertTextField" destination="4bc-Yq-eAH" id="jju-FP-UbK"/>
                         <outlet property="alertView" destination="W9n-8a-zs9" id="1OA-3t-52M"/>
                         <outlet property="searchErrorLable" destination="5UN-Gd-5vh" id="3kr-BO-VXW"/>
@@ -219,25 +195,28 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cocktailCell" id="VFk-Ag-0UH" customClass="CocktailTableViewCell" customModule="CocktailTime" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="172.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="140.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VFk-Ag-0UH" id="xYi-7w-E7c" customClass="CocktailTableViewCell" customModule="CocktailTime" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="172.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="140.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bd4-Dd-TBY">
-                                            <rect key="frame" x="20" y="11" width="374" height="150.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Ig-VH-0N2">
+                                            <rect key="frame" x="20" y="20" width="374" height="100.5"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Syc-oQ-vjN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1gM-QS-MfL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="Igx-Ve-4ko"/>
-                                                        <constraint firstAttribute="width" secondItem="Syc-oQ-vjN" secondAttribute="height" multiplier="1:1" id="Ir8-NC-2wb"/>
+                                                        <constraint firstAttribute="width" secondItem="1gM-QS-MfL" secondAttribute="height" multiplier="1:1" id="3eb-au-USG"/>
+                                                        <constraint firstAttribute="width" constant="100" id="OUN-Au-2Yb"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Drink Name)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgJ-LN-TZL">
-                                                    <rect key="frame" x="160" y="0.0" width="214" height="150.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgB-ON-Zb8">
+                                                    <rect key="frame" x="108" y="0.0" width="266" height="100.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="270" id="8lL-jo-1dE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -245,17 +224,18 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="bd4-Dd-TBY" secondAttribute="trailing" id="IKC-ue-wFK"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="bd4-Dd-TBY" secondAttribute="bottom" id="Vta-cX-7Dz"/>
-                                        <constraint firstItem="bd4-Dd-TBY" firstAttribute="centerY" secondItem="xYi-7w-E7c" secondAttribute="centerY" id="Wy1-pu-VNg"/>
-                                        <constraint firstItem="bd4-Dd-TBY" firstAttribute="top" secondItem="xYi-7w-E7c" secondAttribute="topMargin" id="Zth-Qq-wAz"/>
-                                        <constraint firstItem="bd4-Dd-TBY" firstAttribute="centerX" secondItem="xYi-7w-E7c" secondAttribute="centerX" id="g3D-a0-8ht"/>
-                                        <constraint firstItem="bd4-Dd-TBY" firstAttribute="leading" secondItem="xYi-7w-E7c" secondAttribute="leadingMargin" id="kKI-3U-tLy"/>
+                                        <constraint firstItem="1Ig-VH-0N2" firstAttribute="top" secondItem="xYi-7w-E7c" secondAttribute="top" constant="20" symbolic="YES" id="Mkp-g8-6Bi"/>
+                                        <constraint firstAttribute="trailing" secondItem="1Ig-VH-0N2" secondAttribute="trailing" constant="20" symbolic="YES" id="P4U-lw-MzZ"/>
+                                        <constraint firstItem="1Ig-VH-0N2" firstAttribute="leading" secondItem="xYi-7w-E7c" secondAttribute="leading" constant="20" symbolic="YES" id="iyf-no-Tlt"/>
+                                        <constraint firstAttribute="bottom" secondItem="1Ig-VH-0N2" secondAttribute="bottom" constant="20" symbolic="YES" id="tB0-Wj-RVV"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="cocktailImage" destination="1gM-QS-MfL" id="2D5-tF-2Iz"/>
+                                    </connections>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="cocktailImage" destination="Syc-oQ-vjN" id="UdO-qS-UyA"/>
-                                    <outlet property="cocktailLabel" destination="OgJ-LN-TZL" id="0Il-6r-XUQ"/>
+                                    <outlet property="cocktailImage" destination="1gM-QS-MfL" id="scy-Pd-b6o"/>
+                                    <outlet property="cocktailLabel" destination="RgB-ON-Zb8" id="ioS-mL-QBO"/>
                                     <segue destination="6Fh-ae-F6A" kind="show" identifier="toCocktailDetail" id="Y5T-9c-fta"/>
                                 </connections>
                             </tableViewCell>

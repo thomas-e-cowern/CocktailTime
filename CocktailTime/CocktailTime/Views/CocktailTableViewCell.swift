@@ -11,8 +11,8 @@ import UIKit
 class CocktailTableViewCell: UITableViewCell {
 
     // Outlets
-    @IBOutlet weak var cocktailLabel: UILabel!
     @IBOutlet weak var cocktailImage: UIImageView!
+    @IBOutlet weak var cocktailLabel: UILabel!
     
     // landing pad for data
     var cocktail: Cocktail? {
@@ -27,30 +27,25 @@ class CocktailTableViewCell: UITableViewCell {
             print("Error in guard let for CocktailTableViewCell")
             return
         }
-//        print("Hit update views")
         
-        // Fetching the cocktail thumbnail
-        CocktailController.getCocktailThumbnail(cocktail) { (image) in
-            guard let image = image else {
-                print("error getting image in cocktailTableViewCell")
-                return
-            }
-            DispatchQueue.main.async {
-                self.cocktailImage.image = image
+        if cocktail.name == "We can't find that cocktail!  Hit the back button and try again" {
+            cocktailImage.image = UIImage(named: "noC")
+        } else {
+            // Fetching the cocktail thumbnail
+            CocktailController.getCocktailThumbnail(cocktail) { (image) in
+                guard let image = image else {
+                    print("error getting image in cocktailTableViewCell")
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.cocktailImage.image = image
+                }
             }
         }
-//        MovieController.getMoviePoster(movie) { (image) in
-//            DispatchQueue.main.async {
-//                self.moviePosterView.image = image
-//            }
-//        }
         
         // Updating the view:
         DispatchQueue.main.async {
             self.cocktailLabel.text = cocktail.name
-//            self.movieRatingLabel.text = "Rating: \(movie.rating)"
-//            self.movieTitleLabel.text = movie.title
-//            self.movieSummaryLabel.text = movie.summary
         }
     }
 

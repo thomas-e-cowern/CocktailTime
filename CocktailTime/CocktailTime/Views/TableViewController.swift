@@ -10,7 +10,6 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    
     var cocktailName: String?
     
     var cocktailList = [Cocktail]()
@@ -18,7 +17,6 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchCocktails()
-        
     }
     
     func fetchCocktails() {
@@ -48,24 +46,32 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath) as!
             CocktailTableViewCell
-//        print(cocktailList)
+        print("CL: \(cocktailList)")
         let cocktail = cocktailList[indexPath.row]
-//        print(cocktail)
         cell.cocktail = cocktail
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 166
+        return 116
     }
     
     // MARK: - Navigation
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "toCocktailDetail" {
+            if cocktailList[0].name == "We can't find that cocktail!  Hit the back button and try again"  {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCocktailDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             let destinationVC = segue.destination as! CocktailDetailViewController
             let cocktial = cocktailList[indexPath.row]
-//            print("cocktail from table view controller navigation: \(cocktial)")
             destinationVC.cocktail = cocktial
         }
     }
