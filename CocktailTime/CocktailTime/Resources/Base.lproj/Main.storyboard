@@ -211,7 +211,7 @@
                                                         <constraint firstAttribute="width" constant="100" id="OUN-Au-2Yb"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgB-ON-Zb8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgB-ON-Zb8">
                                                     <rect key="frame" x="108" y="0.0" width="266" height="100.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="270" id="8lL-jo-1dE"/>
@@ -259,14 +259,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Drink Name)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FsB-af-nPF">
-                                <rect key="frame" x="100" y="112" width="214" height="38.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is where the drink name would be" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FsB-af-nPF">
+                                <rect key="frame" x="50" y="112" width="314" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="OVh-Rj-1rL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFJ-Lq-hyf">
-                                <rect key="frame" x="24" y="461.5" width="366" height="130"/>
+                                <rect key="frame" x="24" y="508" width="366" height="130"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="2Oz-92-pYm"/>
@@ -277,14 +280,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vA8-GB-9Hm">
-                                <rect key="frame" x="87" y="189.5" width="240" height="240"/>
+                                <rect key="frame" x="87" y="236" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vA8-GB-9Hm" secondAttribute="height" multiplier="1:1" id="JQs-uF-u00"/>
                                     <constraint firstAttribute="width" constant="240" id="etL-Ra-Vqn"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iMW-rQ-c9l">
-                                <rect key="frame" x="88" y="607.5" width="238" height="168"/>
+                                <rect key="frame" x="88" y="654" width="238" height="168"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="168" id="hEj-ko-3oQ"/>
@@ -304,16 +307,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="iMW-rQ-c9l" firstAttribute="leading" secondItem="jjx-Ff-qHP" secondAttribute="leading" constant="88" id="07X-mt-5zm"/>
-                            <constraint firstItem="FsB-af-nPF" firstAttribute="leading" secondItem="jjx-Ff-qHP" secondAttribute="leading" constant="100" id="5QW-8R-YXr"/>
+                            <constraint firstItem="FsB-af-nPF" firstAttribute="leading" secondItem="jjx-Ff-qHP" secondAttribute="leading" constant="50" id="5QW-8R-YXr"/>
                             <constraint firstItem="iMW-rQ-c9l" firstAttribute="top" secondItem="TFJ-Lq-hyf" secondAttribute="bottom" constant="16" id="Ar6-o2-UkI"/>
                             <constraint firstItem="FsB-af-nPF" firstAttribute="top" secondItem="jjx-Ff-qHP" secondAttribute="top" constant="24" id="FrQ-So-iZO"/>
                             <constraint firstItem="vA8-GB-9Hm" firstAttribute="centerX" secondItem="WYx-ul-yQW" secondAttribute="centerX" id="K2D-SK-jfb"/>
                             <constraint firstItem="TFJ-Lq-hyf" firstAttribute="top" secondItem="vA8-GB-9Hm" secondAttribute="bottom" constant="32" id="LT6-ta-21M"/>
                             <constraint firstItem="iMW-rQ-c9l" firstAttribute="centerX" secondItem="WYx-ul-yQW" secondAttribute="centerX" id="OOJ-Yo-eS6"/>
-                            <constraint firstItem="vA8-GB-9Hm" firstAttribute="top" secondItem="FsB-af-nPF" secondAttribute="bottom" constant="39" id="Wqf-pn-D14"/>
+                            <constraint firstItem="vA8-GB-9Hm" firstAttribute="top" secondItem="FsB-af-nPF" secondAttribute="bottom" constant="24" id="Wqf-pn-D14"/>
                             <constraint firstItem="jjx-Ff-qHP" firstAttribute="trailing" secondItem="iMW-rQ-c9l" secondAttribute="trailing" constant="88" id="Z0Q-KJ-gLS"/>
                             <constraint firstItem="jjx-Ff-qHP" firstAttribute="trailing" secondItem="TFJ-Lq-hyf" secondAttribute="trailing" constant="24" id="e3f-cs-THh"/>
-                            <constraint firstItem="jjx-Ff-qHP" firstAttribute="trailing" secondItem="FsB-af-nPF" secondAttribute="trailing" constant="100" id="fM9-dH-WQt"/>
+                            <constraint firstItem="jjx-Ff-qHP" firstAttribute="trailing" secondItem="FsB-af-nPF" secondAttribute="trailing" constant="50" id="fM9-dH-WQt"/>
                             <constraint firstItem="TFJ-Lq-hyf" firstAttribute="centerX" secondItem="WYx-ul-yQW" secondAttribute="centerX" id="hZM-y5-79t"/>
                             <constraint firstItem="TFJ-Lq-hyf" firstAttribute="leading" secondItem="jjx-Ff-qHP" secondAttribute="leading" constant="24" id="oMQ-n4-ur4"/>
                         </constraints>
