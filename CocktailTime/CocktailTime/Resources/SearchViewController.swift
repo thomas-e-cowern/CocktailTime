@@ -21,6 +21,12 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+//        button.backgroundColor = .clear
+//        button.layer.cornerRadius = 5
+//        button.layer.borderWidth = 1
+//        button.layer.borderColor = UIColor.black.cgColor
+        
+        nameSearchButton.layer.cornerRadius = 10
     }
     
     

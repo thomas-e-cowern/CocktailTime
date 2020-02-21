@@ -44,9 +44,8 @@
                                     <action selector="alcoholSearchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="nbf-3j-LMS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By Cocktail Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9m-To-j17">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Cocktail Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9m-To-j17">
                                 <rect key="frame" x="147" y="249" width="120" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,11 +57,13 @@
                         <constraints>
                             <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="JP1-P5-3Ro" secondAttribute="trailing" constant="50" id="7cc-Si-Nea"/>
                             <constraint firstItem="oJy-Rr-FRw" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="24" id="J7s-AH-85a"/>
+                            <constraint firstItem="g9m-To-j17" firstAttribute="centerX" secondItem="EW2-jj-Ebo" secondAttribute="centerX" id="LTz-ME-F5p"/>
                             <constraint firstItem="JP1-P5-3Ro" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="50" id="Or8-S6-IjM"/>
                             <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="oJy-Rr-FRw" secondAttribute="trailing" constant="24" id="Xkz-ts-cAu"/>
                             <constraint firstItem="EW2-jj-Ebo" firstAttribute="centerX" secondItem="seO-xx-tf1" secondAttribute="centerX" id="iT4-jH-762"/>
                             <constraint firstItem="EW2-jj-Ebo" firstAttribute="top" secondItem="oJy-Rr-FRw" secondAttribute="bottom" constant="42" id="pFS-Cf-8PX"/>
                             <constraint firstItem="oJy-Rr-FRw" firstAttribute="top" secondItem="SW8-FM-GdO" secondAttribute="top" constant="20" id="pzx-o9-CdE"/>
+                            <constraint firstItem="g9m-To-j17" firstAttribute="top" secondItem="EW2-jj-Ebo" secondAttribute="bottom" constant="-96.5" id="tXf-XN-cbf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SW8-FM-GdO"/>
                     </view>
