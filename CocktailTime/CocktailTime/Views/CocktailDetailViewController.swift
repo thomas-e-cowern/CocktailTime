@@ -15,6 +15,7 @@ class CocktailDetailViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var cocktailImage: UIImageView!
     @IBOutlet weak var cocktailInstructionsText: UITextView!
     @IBOutlet weak var ingredientsTableView: UITableView!
+    @IBOutlet weak var copyIngredientsButton: UIButton!
     
     // Properties
     var ingredientsAndMeasures = [String]()
@@ -68,6 +69,18 @@ class CocktailDetailViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
 
+    @IBAction func copyIngredientsPressed(_ sender: Any) {
+        print("Copy ingredients pressed")
+        var copyIngredientsList = ""
+        for i in 0..<ingredientsAndMeasures.count {
+            copyIngredientsList += " \(ingredientsAndMeasures[i])\n"
+        }
+        print(copyIngredientsList)
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = copyIngredientsList
+    }
+    
+    
     // MARK - Table view methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ingredientsAndMeasures.count

@@ -303,14 +303,26 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyh-GZ-477">
+                                                <rect key="frame" x="197" y="666" width="21.5" height="24"/>
+                                                <state key="normal" image="doc.on.clipboard.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="copyIngredientsPressed:" destination="6Fh-ae-F6A" eventType="touchUpInside" id="0eH-mp-Dmy"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="Vyh-GZ-477" firstAttribute="top" secondItem="iMW-rQ-c9l" secondAttribute="bottom" constant="8" id="3mf-5o-43G"/>
+                                            <constraint firstItem="iMW-rQ-c9l" firstAttribute="leading" secondItem="TFJ-Lq-hyf" secondAttribute="leading" id="5so-zg-ke7"/>
                                             <constraint firstItem="FsB-af-nPF" firstAttribute="leading" secondItem="7Hm-P3-qAI" secondAttribute="leading" constant="24" id="A0s-Pf-crv"/>
                                             <constraint firstItem="vA8-GB-9Hm" firstAttribute="centerX" secondItem="7Hm-P3-qAI" secondAttribute="centerX" id="Bdq-OG-KCk"/>
                                             <constraint firstItem="vA8-GB-9Hm" firstAttribute="top" secondItem="FsB-af-nPF" secondAttribute="bottom" constant="45" id="L0g-oX-OM0"/>
                                             <constraint firstAttribute="bottom" secondItem="iMW-rQ-c9l" secondAttribute="bottom" constant="125" id="MR8-Ug-bNo"/>
                                             <constraint firstItem="FsB-af-nPF" firstAttribute="top" secondItem="7Hm-P3-qAI" secondAttribute="top" constant="45" id="X8s-ku-PMc"/>
+                                            <constraint firstItem="TFJ-Lq-hyf" firstAttribute="trailing" secondItem="iMW-rQ-c9l" secondAttribute="trailing" id="nVM-4H-Szt"/>
                                             <constraint firstItem="TFJ-Lq-hyf" firstAttribute="top" secondItem="vA8-GB-9Hm" secondAttribute="bottom" constant="35" id="nVo-Ea-aWG"/>
+                                            <constraint firstItem="TFJ-Lq-hyf" firstAttribute="centerX" secondItem="vA8-GB-9Hm" secondAttribute="centerX" id="p8S-PC-1k5"/>
+                                            <constraint firstItem="Vyh-GZ-477" firstAttribute="centerX" secondItem="7Hm-P3-qAI" secondAttribute="centerX" id="ssm-cM-uQx"/>
                                             <constraint firstItem="iMW-rQ-c9l" firstAttribute="top" secondItem="TFJ-Lq-hyf" secondAttribute="bottom" constant="45" id="uSg-lU-E6f"/>
                                             <constraint firstAttribute="trailing" secondItem="FsB-af-nPF" secondAttribute="trailing" constant="24" id="zcl-r8-Gmf"/>
                                         </constraints>
@@ -342,6 +354,7 @@
                         <outlet property="ciocktailNameLabel" destination="FsB-af-nPF" id="IFx-ru-TMt"/>
                         <outlet property="cocktailImage" destination="vA8-GB-9Hm" id="zuX-Av-5IX"/>
                         <outlet property="cocktailInstructionsText" destination="TFJ-Lq-hyf" id="whK-hk-n0l"/>
+                        <outlet property="copyIngredientsButton" destination="Vyh-GZ-477" id="26b-91-deM"/>
                         <outlet property="ingredientsTableView" destination="iMW-rQ-c9l" id="ZMr-Nf-ISU"/>
                     </connections>
                 </viewController>
@@ -368,4 +381,7 @@
             <point key="canvasLocation" x="-6255.072463768116" y="-696.42857142857144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="doc.on.clipboard.fill" catalog="system" width="58" height="64"/>
+    </resources>
 </document>
