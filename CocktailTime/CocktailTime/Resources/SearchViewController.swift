@@ -42,7 +42,6 @@ class SearchViewController: UIViewController {
     
     @IBAction func nameSearchButtonPressed(_ sender: Any) {
         showCustomAlert(title: "Enter a cocktail name")
-        print("ST: \(searchText)")
     }
     
     @IBAction func alcoholSearchButtonPressed(_ sender: Any) {
@@ -53,7 +52,6 @@ class SearchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "searchIdentifier" {
             let destinationVC = segue.destination as! TableViewController
-            print("SC in SVC: \(searchText)")
             destinationVC.cocktailName = searchText
         } else if segue.identifier == "CustomAlertID" {
             let displayVC = segue.destination as! CustomAlertViewController

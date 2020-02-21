@@ -308,7 +308,6 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="FsB-af-nPF" firstAttribute="leading" secondItem="7Hm-P3-qAI" secondAttribute="leading" constant="24" id="A0s-Pf-crv"/>
                                             <constraint firstItem="vA8-GB-9Hm" firstAttribute="centerX" secondItem="7Hm-P3-qAI" secondAttribute="centerX" id="Bdq-OG-KCk"/>

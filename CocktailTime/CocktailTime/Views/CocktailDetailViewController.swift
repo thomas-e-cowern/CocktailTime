@@ -35,6 +35,8 @@ class CocktailDetailViewController: UIViewController, UITableViewDelegate, UITab
         guard let cocktail = cocktail else { return }
         
         ingredientsAndMeasures = Helper.createIngredientList(cocktail: cocktail)
+        
+        cocktailInstructionsText.center.x = self.view.center.x
     }
 
     // MARK: - Methods
