@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4116204623FC149A000F25E3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4116204523FC149A000F25E3 /* Helper.swift */; };
 		4116204823FC4F29000F25E3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4116204723FC4F29000F25E3 /* SearchViewController.swift */; };
+		41193798240075A000889D0E /* Alcohol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41193797240075A000889D0E /* Alcohol.swift */; };
 		41361ED423F9AD9D0036D7E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41361ED323F9AD9D0036D7E3 /* AppDelegate.swift */; };
 		41361ED623F9AD9D0036D7E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41361ED523F9AD9D0036D7E3 /* SceneDelegate.swift */; };
 		41361EDB23F9AD9D0036D7E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41361ED923F9AD9D0036D7E3 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		4116204523FC149A000F25E3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = CocktailTime/Views/Helper.swift; sourceTree = SOURCE_ROOT; };
 		4116204723FC4F29000F25E3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = CocktailTime/Resources/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
+		41193797240075A000889D0E /* Alcohol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alcohol.swift; sourceTree = "<group>"; };
 		41361ED023F9AD9D0036D7E3 /* CocktailTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocktailTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41361ED323F9AD9D0036D7E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41361ED523F9AD9D0036D7E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				41E7F25223F9D2E900CF0511 /* Cocktail.swift */,
+				41193797240075A000889D0E /* Alcohol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				41361EDE23F9AD9D0036D7E3 /* CocktailTime.xcdatamodeld in Sources */,
 				41E7F25323F9D2E900CF0511 /* Cocktail.swift in Sources */,
 				4116204623FC149A000F25E3 /* Helper.swift in Sources */,
+				41193798240075A000889D0E /* Alcohol.swift in Sources */,
 				41426B4023FD6FB000EDA3F2 /* CustomAlertViewController.swift in Sources */,
 				41426B4223FD70DC00EDA3F2 /* CustomAlertViewDelegate.swift in Sources */,
 				41361ED623F9AD9D0036D7E3 /* SceneDelegate.swift in Sources */,

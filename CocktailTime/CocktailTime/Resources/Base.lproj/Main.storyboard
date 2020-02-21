@@ -21,7 +21,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EW2-jj-Ebo">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EW2-jj-Ebo">
                                 <rect key="frame" x="119.5" y="170.5" width="175" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="PKJ-ak-kZq"/>
@@ -29,41 +29,37 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="1"/>
-                                <state key="normal" backgroundImage="cocktail">
-                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Cocktail Name" backgroundImage="cocktail">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="nameSearchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="FxG-od-7O4"/>
                                     <segue destination="9Dx-4A-VmX" kind="show" identifier="searchIdentifier" id="VoQ-PG-yeh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-P5-3Ro">
-                                <rect key="frame" x="38" y="383" width="314" height="30"/>
-                                <state key="normal" title="Search by alcohol name"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-P5-3Ro">
+                                <rect key="frame" x="119.5" y="369.5" width="175" height="175"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JP1-P5-3Ro" secondAttribute="height" multiplier="1:1" id="B7e-i1-r1F"/>
+                                    <constraint firstAttribute="height" constant="175" id="GwR-Pn-doV"/>
+                                </constraints>
+                                <state key="normal" title="Alcohol Name" backgroundImage="vodka">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="alcoholSearchButtonPressed:" destination="WOc-UJ-sSo" eventType="touchUpInside" id="nbf-3j-LMS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Cocktail Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9m-To-j17">
-                                <rect key="frame" x="147" y="249" width="120" height="19"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="-2"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="JP1-P5-3Ro" secondAttribute="trailing" constant="50" id="7cc-Si-Nea"/>
                             <constraint firstItem="oJy-Rr-FRw" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="24" id="J7s-AH-85a"/>
-                            <constraint firstItem="g9m-To-j17" firstAttribute="centerX" secondItem="EW2-jj-Ebo" secondAttribute="centerX" id="LTz-ME-F5p"/>
-                            <constraint firstItem="JP1-P5-3Ro" firstAttribute="leading" secondItem="SW8-FM-GdO" secondAttribute="leading" constant="50" id="Or8-S6-IjM"/>
+                            <constraint firstItem="JP1-P5-3Ro" firstAttribute="top" secondItem="EW2-jj-Ebo" secondAttribute="bottom" constant="24" id="W7U-KZ-93x"/>
                             <constraint firstItem="SW8-FM-GdO" firstAttribute="trailing" secondItem="oJy-Rr-FRw" secondAttribute="trailing" constant="24" id="Xkz-ts-cAu"/>
                             <constraint firstItem="EW2-jj-Ebo" firstAttribute="centerX" secondItem="seO-xx-tf1" secondAttribute="centerX" id="iT4-jH-762"/>
                             <constraint firstItem="EW2-jj-Ebo" firstAttribute="top" secondItem="oJy-Rr-FRw" secondAttribute="bottom" constant="42" id="pFS-Cf-8PX"/>
                             <constraint firstItem="oJy-Rr-FRw" firstAttribute="top" secondItem="SW8-FM-GdO" secondAttribute="top" constant="20" id="pzx-o9-CdE"/>
-                            <constraint firstItem="g9m-To-j17" firstAttribute="top" secondItem="EW2-jj-Ebo" secondAttribute="bottom" constant="-96.5" id="tXf-XN-cbf"/>
+                            <constraint firstItem="JP1-P5-3Ro" firstAttribute="centerX" secondItem="seO-xx-tf1" secondAttribute="centerX" id="xhr-eq-66V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SW8-FM-GdO"/>
                     </view>
@@ -400,5 +396,6 @@
     <resources>
         <image name="cocktail" width="512" height="512"/>
         <image name="doc.on.clipboard.fill" catalog="system" width="58" height="64"/>
+        <image name="vodka" width="512" height="512"/>
     </resources>
 </document>

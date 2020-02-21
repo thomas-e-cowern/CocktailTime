@@ -14,29 +14,47 @@ class CocktailController: UIViewController {
     static let baseUrl = URL(string: "https://www.thecocktaildb.com")
     private static let apiSecret = "1"
     
-    // Full Url when complete
+    // Full Url when complete for name
     // URLString = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
     
+    // Full Url when complete for alcohol
+    // URLString = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Jack Daniels"
+    
     // MARK: - Fetching data from API
-    static func fetchCocktsilResults(with searchTerm: String, completion: @escaping ([Cocktail]?) -> Void) {
+    static func fetchCocktsilResults(with searchTerm: String, searchFor: String, completion: @escaping ([Cocktail]?) -> Void) {
         // URL
         guard var url = baseUrl else {
             completion(nil)
             return
         }
         
+        var queryItemName = ""
+        
+        if searchFor == "cocktail" {
+            queryItemName = "s"
+        } else {
+            queryItemName = "i"
+        }
+        
+        print("Searching for: \(searchFor)")
+        
         // Construct the url by appending path components
         url.appendPathComponent("api")
         url.appendPathComponent("json")
         url.appendPathComponent("v1")
         url.appendPathComponent("\(apiSecret)")
-        url.appendPathComponent("search.php")
+        if searchFor == "cocktail" {
+            url.appendPathComponent("search.php")
+        } else {
+            url.appendPathComponent("filter.php")
+        }
+        
         
         // Break out the path components
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         
         // Define the queries from the url example above
-        let titleQueryItem = URLQueryItem(name: "s", value: searchTerm)
+        let titleQueryItem = URLQueryItem(name: queryItemName, value: searchTerm)
         
         // add queries to the query array
         components?.queryItems = [titleQueryItem]
@@ -47,6 +65,8 @@ class CocktailController: UIViewController {
             return
         }
 
+        print("\(finalUrl)")
+        
         // Building the request
         var request = URLRequest(url: finalUrl)
         request.httpMethod = "GET"

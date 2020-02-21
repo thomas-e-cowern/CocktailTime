@@ -10,21 +10,25 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    var cocktailName: String?
+    var searchTerm: String?
+    var searchName: String?
     
     var cocktailList = [Cocktail]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchCocktails()
-    }
-    
-    func fetchCocktails() {
-        guard let cocktailName = cocktailName else {
-            print("Error in fetch cocktails")
+        
+        guard let searchTerm = searchTerm, let searchName = searchName else {
             return
         }
-        CocktailController.fetchCocktsilResults(with: cocktailName) { (cocktails) in
+        
+        fetchCocktails(searchTerm: searchTerm, searchName: searchName)
+    }
+    
+    func fetchCocktails(searchTerm: String, searchName: String) {
+        print("Search Term: \(searchTerm) SearchName; \(searchName)")
+
+        CocktailController.fetchCocktsilResults(with: searchTerm, searchFor: searchName) { (cocktails) in
             guard let fetchedCocktails = cocktails else { return }
             self.cocktailList = fetchedCocktails
             DispatchQueue.main.async {

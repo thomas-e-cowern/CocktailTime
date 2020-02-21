@@ -13,19 +13,16 @@ class SearchViewController: UIViewController {
     // Outlets
     @IBOutlet weak var nameSearchButton: UIButton!
     @IBOutlet weak var alcoholSearchButton: UIButton!
-
+    
+    
     
     var searchText = String()
+    var searchType = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-//        button.backgroundColor = .clear
-//        button.layer.cornerRadius = 5
-//        button.layer.borderWidth = 1
-//        button.layer.borderColor = UIColor.black.cgColor
-        
+        // Do any additional setup after loading the view.  
         nameSearchButton.layer.cornerRadius = 10
     }
     
@@ -47,10 +44,12 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func nameSearchButtonPressed(_ sender: Any) {
+        searchType = "cocktail"
         showCustomAlert(title: "Enter a cocktail name")
     }
     
     @IBAction func alcoholSearchButtonPressed(_ sender: Any) {
+        searchType = "alcohol"
         showCustomAlert(title: "Enter a liquor")
     }
     
@@ -58,7 +57,8 @@ class SearchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "searchIdentifier" {
             let destinationVC = segue.destination as! TableViewController
-            destinationVC.cocktailName = searchText
+            destinationVC.searchTerm = searchText
+            destinationVC.searchName = searchType
         } else if segue.identifier == "CustomAlertID" {
             let displayVC = segue.destination as! CustomAlertViewController
             displayVC.delegate = self
@@ -67,6 +67,7 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: CustomAlertViewDelegate {
+    
     func searchButtonTapped(alertTextFieldValue: String) {
         searchText = alertTextFieldValue
         performSegue(withIdentifier: "searchIdentifier", sender: nil)
