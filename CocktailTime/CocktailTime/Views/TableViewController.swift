@@ -46,7 +46,6 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath) as!
             CocktailTableViewCell
-        print("CL: \(cocktailList)")
         let cocktail = cocktailList[indexPath.row]
         cell.cocktail = cocktail
         return cell

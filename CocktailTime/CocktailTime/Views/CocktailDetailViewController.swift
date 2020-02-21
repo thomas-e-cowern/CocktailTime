@@ -36,7 +36,9 @@ class CocktailDetailViewController: UIViewController, UITableViewDelegate, UITab
         
         ingredientsAndMeasures = Helper.createIngredientList(cocktail: cocktail)
         
+        // Center instructions and ingredients
         cocktailInstructionsText.center.x = self.view.center.x
+        ingredientsTableView.center.x = self.view.center.x
     }
 
     // MARK: - Methods
