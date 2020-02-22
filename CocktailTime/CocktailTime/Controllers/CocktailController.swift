@@ -22,53 +22,18 @@ class CocktailController: UIViewController {
     
     // MARK: - Fetching data from API
     static func fetchCocktsilResults(with searchTerm: String, searchFor: String, completion: @escaping ([Cocktail]?) -> Void) {
-        // URL
-        guard var url = baseUrl else {
-            completion(nil)
-            return
+        
+        let finalUrl = URL(string: Helper.buildUrl(searchFor: searchFor, searchTerm: searchTerm))
+        
+        guard let url = finalUrl else {
+                completion(nil)
+                return
         }
         
-        var queryItemName = ""
-        
-        if searchFor == "cocktail" {
-            queryItemName = "s"
-        } else {
-            queryItemName = "i"
-        }
-        
-        print("Searching for: \(searchFor)")
-        
-        // Construct the url by appending path components
-        url.appendPathComponent("api")
-        url.appendPathComponent("json")
-        url.appendPathComponent("v1")
-        url.appendPathComponent("\(apiSecret)")
-        if searchFor == "cocktail" {
-            url.appendPathComponent("search.php")
-        } else {
-            url.appendPathComponent("filter.php")
-        }
-        
-        
-        // Break out the path components
-        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-        
-        // Define the queries from the url example above
-        let titleQueryItem = URLQueryItem(name: queryItemName, value: searchTerm)
-        
-        // add queries to the query array
-        components?.queryItems = [titleQueryItem]
-        
-        // Build the final url
-        guard let finalUrl = components?.url else {
-            completion(nil)
-            return
-        }
-
-        print("\(finalUrl)")
+        print("\(url)")
         
         // Building the request
-        var request = URLRequest(url: finalUrl)
+        var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.httpBody = nil
         
@@ -99,6 +64,54 @@ class CocktailController: UIViewController {
                 print("😡 👎 There was an error in \(#function) ; \(error) ; \(error.localizedDescription)")
                 let cocktailError = Cocktail(id: "", name: "We can't find that cocktail!  Hit the back button and try again", glass: "None", thumbnail: "None", instructions: "None")
                 completion([cocktailError])
+                return
+            }
+        }.resume()
+    }
+    
+    static func fetchAlcoholResults(with searchTerm: String, searchFor: String, completion: @escaping ([Alcohol]?) -> Void) {
+        
+        let finalUrl = URL(string: Helper.buildUrl(searchFor: searchFor, searchTerm: searchTerm))
+        
+        guard let url = finalUrl else {
+                completion(nil)
+                return
+        }
+        
+        print("\(url)")
+        
+        // Building the request
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.httpBody = nil
+        
+        // Making the fetch call to the API
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            // if the call fails immediately
+            if let error = error {
+                print("😡 There was an error in \(#function) ; \(error) ; \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            // Checking to see if data is there
+            guard let data = data else {
+                completion(nil)
+                return
+            }
+            
+            // Parsing the data into something usefull
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                let alcoholService = try jsonDecoder.decode(AlcoholService.self, from: data)
+                let cocktails = alcoholService.alcoholResults
+                
+                completion(cocktails)
+            } catch {
+                print("😡 👎 There was an error in \(#function) ; \(error) ; \(error.localizedDescription)")
+                let alcoholError = Alcohol(name: "We can't find that Alcohol!  Hit the back button and try again", image: "", id: "")
+                completion([alcoholError])
                 return
             }
         }.resume()

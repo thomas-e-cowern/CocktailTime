@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Helper {
     
@@ -68,5 +69,28 @@ class Helper {
             return ["No Ingredients Listed"]
         }
         return combinedArrays
+    }
+    
+    static func buildUrl (searchFor: String, searchTerm: String) -> String {
+
+        var baseUrlString = ""
+        let apiSecret = "1"
+           
+        // Full Url when complete for name
+        // URLString = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
+           
+        // Full Url when complete for alcohol
+        // URLString = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Jack Daniels"
+
+        
+        if searchFor == "cocktail" {
+            baseUrlString = "https://www.thecocktaildb.com/api/json/v1/\(apiSecret)/search.php?s=\(searchTerm)"
+        } else {
+            baseUrlString = "https://www.thecocktaildb.com/api/json/v1/\(apiSecret)/filter.php?i=\(searchTerm)"
+        }
+
+        print("\(baseUrlString)")
+        
+        return baseUrlString
     }
 }

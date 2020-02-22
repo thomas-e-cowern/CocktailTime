@@ -17,21 +17,39 @@ class CocktailTableViewCell: UITableViewCell {
     // landing pad for data
     var cocktail: Cocktail? {
         didSet {
-            updateViews()
+            updateViews(type: "cocktail")
         }
     }
     
+    var alcohol: Alcohol? {
+        didSet {
+            updateViews(type: "alcohol")
+        }
+    }
+    
+    var type = ""
+    
     // keeping view updated
-    func updateViews() {
-        guard let cocktail = cocktail else {
-            print("Error in guard let for CocktailTableViewCell")
-            return
+    func updateViews(type: String) {
+        if type == "cocktail" {
+            print("cocktail")
+            guard let cocktail = cocktail else {
+                print("Error in guard let for CocktailTableViewCell")
+                return
+            }
+        } else {
+            print("Alcohol")
+            guard let alcohol = alcohol else {
+                print("Error in guard let for alcoholTableViewCell")
+                return
+            }
         }
         
-        if cocktail.name == "We can't find that cocktail!  Hit the back button and try again" {
+        if cocktail?.name == "We can't find that cocktail!  Hit the back button and try again" {
             cocktailImage.image = UIImage(named: "noC")
         } else {
             // Fetching the cocktail thumbnail
+            guard let cocktail = cocktail else { return }
             CocktailController.getCocktailThumbnail(cocktail) { (image) in
                 guard let image = image else {
                     print("error getting image in cocktailTableViewCell")
@@ -45,7 +63,7 @@ class CocktailTableViewCell: UITableViewCell {
         
         // Updating the view:
         DispatchQueue.main.async {
-            self.cocktailLabel.text = cocktail.name
+            self.cocktailLabel.text = self.cocktail?.name
         }
     }
 
