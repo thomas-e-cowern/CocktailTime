@@ -19,23 +19,27 @@ class CocktailDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     // Properties
     var ingredientsAndMeasures = [String]()
+
+    var fetchedRecipe : Recipe?
     
     var cocktail: Cocktail? {
         didSet {
             loadViewIfNeeded()
-            updateViews()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ingredientsTableView.delegate = self
         ingredientsTableView.dataSource = self
-
-        guard let cocktail = cocktail else { return }
         
-        ingredientsAndMeasures = Helper.createIngredientList(cocktail: cocktail)
+        guard let cocktail = cocktail else {
+            print("Cocktail is bad")
+            return
+        }
+
+        fetchRecipe(cocktail)
         
         // Center instructions and ingredients
         cocktailInstructionsText.center.x = self.view.center.x
@@ -43,30 +47,48 @@ class CocktailDetailViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     // MARK: - Methods
-    func updateViews() {
-        if let cocktail = cocktail {
-            self.title = "Your Chosen Cocktail"
-            ciocktailNameLabel.text = cocktail.name
-            
-            // Getting the thumbnail
-            CocktailController.getCocktailThumbnail(cocktail) { (image) in
-                guard let image = image else {
-                    print("error getting image in cocktailTableViewCell")
-                    return
+    
+    func fetchRecipe(_ cocktail: Cocktail) {
+        
+        CocktailController.fetchRecipeResults(with: cocktail.id) { (recipe) in
+            guard let fetchedRecipe = recipe else {
+                print("bad recipe")
+                return
+            }
+            self.fetchedRecipe = fetchedRecipe
+            self.ingredientsAndMeasures = Helper.createIngredientList(recipe: fetchedRecipe)
+            print("IG: \(self.ingredientsAndMeasures)")
+                DispatchQueue.main.async {
+                    self.ingredientsTableView.reloadData()
+                    self.updateViews()
                 }
+            
+            CocktailController.getImage(fetchedRecipe.thumbnail) { (image) in
+            guard let image = image else {
+                print("error getting image in cocktailTableViewCell")
+                return
+            }
                 DispatchQueue.main.async {
                     self.cocktailImage.image = image
+                    self.updateViews()
                 }
             }
-            
-            cocktailInstructionsText.text = cocktail.instructions
-            cocktailInstructionsText.translatesAutoresizingMaskIntoConstraints = true
-            cocktailInstructionsText.sizeToFit()
-            cocktailInstructionsText.isScrollEnabled = false
-
-        } else {
-            self.title = "Else If"
         }
+    }
+    
+    func updateViews() {
+
+        // Center instructions and ingredients
+        cocktailInstructionsText.center.x = self.view.center.x
+        ingredientsTableView.center.x = self.view.center.x
+        
+        self.title = "Your Chosen Cocktail"
+        ciocktailNameLabel.text = fetchedRecipe?.name
+
+        cocktailInstructionsText.text = fetchedRecipe?.instructions
+        cocktailInstructionsText.translatesAutoresizingMaskIntoConstraints = true
+        cocktailInstructionsText.sizeToFit()
+        cocktailInstructionsText.isScrollEnabled = false
     }
 
     @IBAction func copyIngredientsPressed(_ sender: Any) {
@@ -82,6 +104,10 @@ class CocktailDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     
     // MARK - Table view methods
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ingredientsAndMeasures.count
     }

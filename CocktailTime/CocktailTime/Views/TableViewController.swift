@@ -14,7 +14,6 @@ class TableViewController: UITableViewController {
     var searchName: String?
     
     var cocktailList = [Cocktail]()
-    var alcoholList = [Alcohol]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,26 +26,15 @@ class TableViewController: UITableViewController {
     }
     
     func fetchCocktails(searchTerm: String, searchName: String) {
-        print("Search Term: \(searchTerm) SearchName; \(searchName)")
+//        print("Search Term: \(searchTerm) SearchName; \(searchName)")
 
-        if searchName == "cocktail" {
-            CocktailController.fetchCocktsilResults(with: searchTerm, searchFor: searchName) { (cocktails) in
-                guard let fetchedCocktails = cocktails else { return }
-                self.cocktailList = fetchedCocktails
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-        } else {
-            CocktailController.fetchAlcoholResults(with: searchTerm, searchFor: searchName) { (cocktails) in
-                guard let fetchedCocktails = cocktails else { return }
-                self.alcoholList = fetchedCocktails
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+        CocktailController.fetchCocktsilResults(with: searchTerm, searchFor: searchName) { (cocktails) in
+            guard let fetchedCocktails = cocktails else { return }
+            self.cocktailList = fetchedCocktails
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
-        
     }
     
     // MARK: - Table view data source
@@ -55,29 +43,16 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchName == "cocktail" {
-            return cocktailList.count
-        } else {
-            return alcoholList.count
-        }
+        return cocktailList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if searchName == "cocktail" {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath) as!
-                CocktailTableViewCell
-            let cocktail = cocktailList[indexPath.row]
-            cell.cocktail = cocktail
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath) as!
-                CocktailTableViewCell
-            let cocktail = alcoholList[indexPath.row]
-            cell.alcohol = cocktail
-            return cell
-        }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath) as!
+            CocktailTableViewCell
+        let cocktail = cocktailList[indexPath.row]
+        cell.cocktail = cocktail
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

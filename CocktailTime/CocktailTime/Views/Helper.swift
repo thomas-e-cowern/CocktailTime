@@ -11,7 +11,7 @@ import UIKit
 
 class Helper {
     
-    static func createIngredientList (cocktail: Cocktail) -> [String] {
+    static func createIngredientList (recipe: Recipe) -> [String] {
         
         // Variables
         var finalIngredientArray = [String]()
@@ -19,10 +19,10 @@ class Helper {
         var finalCombinedArray = [[String]]()
         
         // Combine ingredients into array
-        let ingredientsArray = [cocktail.ingredient1, cocktail.ingredient2, cocktail.ingredient3, cocktail.ingredient4, cocktail.ingredient5, cocktail.ingredient7, cocktail.ingredient8, cocktail.ingredient9, cocktail.ingredient10, cocktail.ingredient11, cocktail.ingredient12, cocktail.ingredient13, cocktail.ingredient14, cocktail.ingredient15]
+        let ingredientsArray = [recipe.ingredient1, recipe.ingredient2, recipe.ingredient3, recipe.ingredient4, recipe.ingredient5, recipe.ingredient7, recipe.ingredient8, recipe.ingredient9, recipe.ingredient10, recipe.ingredient11, recipe.ingredient12, recipe.ingredient13, recipe.ingredient14, recipe.ingredient15]
         
         // Combine measures into array
-        let measureArray = [cocktail.measure1, cocktail.measure2, cocktail.measure3, cocktail.measure4, cocktail.measure5, cocktail.measure6, cocktail.measure7, cocktail.measure8, cocktail.measure9, cocktail.measure10, cocktail.measure11, cocktail.measure12, cocktail.measure13, cocktail.measure14, cocktail.measure15]
+        let measureArray = [recipe.measure1, recipe.measure2, recipe.measure3, recipe.measure4, recipe.measure5, recipe.measure6, recipe.measure7,recipe.measure8, recipe.measure9, recipe.measure10, recipe.measure11, recipe.measure12, recipe.measure13, recipe.measure14, recipe.measure15]
         
         // remove nil values from ingredient array
         for ingredient in ingredientsArray {
@@ -71,7 +71,7 @@ class Helper {
         return combinedArrays
     }
     
-    static func buildUrl (searchFor: String, searchTerm: String) -> String {
+    static func buildSearchUrl (searchFor: String, searchTerm: String) -> String {
 
         var baseUrlString = ""
         let apiSecret = "1"
@@ -88,8 +88,19 @@ class Helper {
         } else {
             baseUrlString = "https://www.thecocktaildb.com/api/json/v1/\(apiSecret)/filter.php?i=\(searchTerm)"
         }
+        
+        return baseUrlString
+    }
+    
+    static func buildIdUrl (id: String) -> String {
 
-        print("\(baseUrlString)")
+        var baseUrlString = ""
+        let apiSecret = "1"
+           
+        // Full Url when complete for name
+        // URLString = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007"
+                
+        baseUrlString = "https://www.thecocktaildb.com/api/json/v1/\(apiSecret)/lookup.php?i=\(id)"
         
         return baseUrlString
     }

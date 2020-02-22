@@ -23,14 +23,12 @@ class CocktailController: UIViewController {
     // MARK: - Fetching data from API
     static func fetchCocktsilResults(with searchTerm: String, searchFor: String, completion: @escaping ([Cocktail]?) -> Void) {
         
-        let finalUrl = URL(string: Helper.buildUrl(searchFor: searchFor, searchTerm: searchTerm))
+        let finalUrl = URL(string: Helper.buildSearchUrl(searchFor: searchFor, searchTerm: searchTerm))
         
         guard let url = finalUrl else {
                 completion(nil)
                 return
         }
-        
-        print("\(url)")
         
         // Building the request
         var request = URLRequest(url: url)
@@ -62,23 +60,21 @@ class CocktailController: UIViewController {
                 completion(cocktails)
             } catch {
                 print("😡 👎 There was an error in \(#function) ; \(error) ; \(error.localizedDescription)")
-                let cocktailError = Cocktail(id: "", name: "We can't find that cocktail!  Hit the back button and try again", glass: "None", thumbnail: "None", instructions: "None")
+                let cocktailError = Cocktail(name: "We can't find that cocktail!  Hit the back button and try again", image: "None", id: "")
                 completion([cocktailError])
                 return
             }
         }.resume()
     }
     
-    static func fetchAlcoholResults(with searchTerm: String, searchFor: String, completion: @escaping ([Alcohol]?) -> Void) {
+    static func fetchRecipeResults(with id: String, completion: @escaping (Recipe?) -> Void) {
         
-        let finalUrl = URL(string: Helper.buildUrl(searchFor: searchFor, searchTerm: searchTerm))
+        let finalUrl = URL(string: Helper.buildIdUrl(id: id))
         
         guard let url = finalUrl else {
                 completion(nil)
                 return
         }
-        
-        print("\(url)")
         
         // Building the request
         var request = URLRequest(url: url)
@@ -104,24 +100,22 @@ class CocktailController: UIViewController {
             let jsonDecoder = JSONDecoder()
             
             do {
-                let alcoholService = try jsonDecoder.decode(AlcoholService.self, from: data)
-                let cocktails = alcoholService.alcoholResults
+                let recipeService = try jsonDecoder.decode(RecipeService.self, from: data)
+                let recipe = recipeService.recipeResults[0]
                 
-                completion(cocktails)
+                completion(recipe)
             } catch {
                 print("😡 👎 There was an error in \(#function) ; \(error) ; \(error.localizedDescription)")
-                let alcoholError = Alcohol(name: "We can't find that Alcohol!  Hit the back button and try again", image: "", id: "")
-                completion([alcoholError])
                 return
             }
         }.resume()
     }
     
     // MARK: - Fetching image from the web
-    static func getCocktailThumbnail(_ cocktail: Cocktail, completion: @escaping ((UIImage?)) -> Void) {
-        //Setting up the url to get the poster
+    static func getImage(_ url: String, completion: @escaping ((UIImage?)) -> Void) {
         
-        guard let ingredientlUrl = URL(string: cocktail.thumbnail) else {
+        //Setting up the url to get the poster
+        guard let ingredientlUrl = URL(string: url) else {
             print("error in thumbnailUrl")
             return
         }
